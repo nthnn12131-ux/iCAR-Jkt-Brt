@@ -681,24 +681,18 @@ nav,
 </style>
 
 
-<style id="mobile-nav-font-color-fix">
+
+<style id="mobile-nav-bright-font-fix">
 @media (max-width: 767px) {
-  #mobileMenuPanel .smooth-nav-link {
-    color: #15150F !important;
-  }
-  #mobileMenuPanel .smooth-nav-link,
-  #mobileMenuPanel .smooth-nav-link span {
-    color: #15150F !important;
-  }
-  #mobileMenuPanel .smooth-nav-link span.text-amberDark {
-    color: #C9862A !important;
-  }
-  #mobileMenuPanel a[href="#contact"] {
-    color: #FFFFFF !important;
-  }
-  #mobileMenuPanel a[href="#contact"] span {
-    color: rgba(255,255,255,0.65) !important;
-  }
+  #mobileMenuPanel .smooth-nav-link { color: #F5F1E7 !important; }
+  #mobileMenuPanel .smooth-nav-link span { color: #F5F1E7 !important; }
+  #mobileMenuPanel .smooth-nav-link span.text-amberDark { color: #FFD166 !important; }
+  #mobileMenuPanel a[href="#contact"] { color: #FFFFFF !important; }
+  #mobileMenuPanel a[href="#contact"] span { color: rgba(255,255,255,.72) !important; }
+  #mobileMenuPanel nav > a:not([href="#contact"]),
+  #mobileMenuPanel nav > div { background: #15150F !important; }
+  #mobileMenuPanel nav > div .smooth-nav-link { background: #15150F !important; }
+  #mobileMenuPanel .smooth-nav-link:hover { background: #29291F !important; }
 }
 </style>
 </head>
