@@ -303,6 +303,75 @@
 }
 </style>
 
+
+<style id="mobile-performance-fix">
+@media (max-width: 767px) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  /* Keep the existing design, but reduce costly rendering on mobile */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .mobile-menu,
+  #mobile-menu,
+  [data-mobile-menu],
+  .mobile-drawer,
+  .mobile-panel {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+
+  /* Avoid expensive blur only while the mobile menu is moving */
+  .mobile-menu.is-animating,
+  #mobile-menu.is-animating,
+  [data-mobile-menu].is-animating,
+  .mobile-drawer.is-animating,
+  .mobile-panel.is-animating {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* GPU-friendly menu transitions */
+  .mobile-menu,
+  #mobile-menu,
+  [data-mobile-menu],
+  .mobile-drawer,
+  .mobile-panel,
+  .mobile-menu-overlay,
+  #mobile-menu-overlay,
+  [data-mobile-overlay] {
+    transition-property: transform, opacity !important;
+    transition-duration: 220ms !important;
+    transition-timing-function: cubic-bezier(.22,.61,.36,1) !important;
+  }
+
+  /* Reduce repaint-heavy animation without changing static appearance */
+  [class*="animate-"],
+  .animate-pulse,
+  .animate-bounce,
+  .animate-spin {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  /* Smooth scrolling sections by reducing off-screen rendering work */
+  section {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 900px;
+  }
+
+  img {
+    content-visibility: auto;
+  }
+}
+</style>
+
 </head>
 <body class="font-sans antialiased text-ink">
 
@@ -1418,6 +1487,50 @@
       if (closeIcon) closeIcon.classList.add('hidden');
     }
   });
+})();
+</script>
+
+
+<script id="mobile-performance-fix-js">
+(() => {
+  const selectors = [
+    '#mobile-menu',
+    '[data-mobile-menu]',
+    '.mobile-menu',
+    '.mobile-drawer',
+    '.mobile-panel'
+  ];
+
+  const getMenu = () => {
+    for (const s of selectors) {
+      const el = document.querySelector(s);
+      if (el) return el;
+    }
+    return null;
+  };
+
+  const menu = getMenu();
+  if (!menu) return;
+
+  let timer;
+  const markAnimating = () => {
+    menu.classList.add('is-animating');
+    clearTimeout(timer);
+    timer = setTimeout(() => menu.classList.remove('is-animating'), 260);
+  };
+
+  // Listen only to common mobile-menu controls; does not alter design or navigation structure.
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest(
+      '[aria-controls="mobile-menu"], [data-mobile-toggle], .mobile-menu-toggle, #mobile-menu-button, #menu-toggle, .hamburger'
+    );
+    const closer = e.target.closest(
+      '[data-mobile-close], .mobile-menu-close, #mobile-menu-close, .mobile-menu-overlay, #mobile-menu-overlay'
+    );
+    if (trigger || closer) markAnimating();
+  }, { passive: true });
+
+  menu.addEventListener('transitionstart', markAnimating, { passive: true });
 })();
 </script>
 
