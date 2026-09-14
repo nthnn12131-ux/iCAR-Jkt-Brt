@@ -628,6 +628,58 @@ nav,
 }
 </style>
 
+
+<style id="mobile-menu-final-visibility">
+@media (max-width: 767px) {
+  /* FINAL: paksa drawer dan seluruh isinya tampil saat menu dibuka */
+  #mobileMenu.is-open {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  #mobileMenu.is-open #mobileMenuPanel {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: translate3d(0,0,0) scale(1) !important;
+  }
+
+  #mobileMenu.is-open #mobileMenuPanel > * {
+    visibility: visible !important;
+  }
+
+  #mobileMenu.is-open .smooth-nav-item,
+  #mobileMenu.is-open .smooth-nav-link {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    color: #15150F !important;
+  }
+
+  #mobileMenu.is-open .smooth-nav-item {
+    position: relative !important;
+  }
+
+  #mobileMenu.is-open .smooth-nav-item > .smooth-nav-link {
+    display: flex !important;
+  }
+
+  #mobileMenu.is-open .smooth-nav-link span {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  #mobileMenu.is-open #mobileMenuClose {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+</style>
+
 </head>
 <body class="font-sans antialiased text-ink">
 
@@ -1838,6 +1890,32 @@ nav,
 
   slider.addEventListener('input', updateSliderVisual, { passive: true });
   updateSliderVisual();
+})();
+</script>
+
+
+<script id="mobile-menu-final-visibility-js">
+(() => {
+  const menu = document.getElementById('mobileMenu');
+  const btn = document.getElementById('mobileMenuBtn');
+  if (!menu || !btn) return;
+
+  const reveal = () => {
+    if (!menu.classList.contains('is-open')) return;
+    const panel = document.getElementById('mobileMenuPanel');
+    if (!panel) return;
+    panel.style.visibility = 'visible';
+    panel.style.opacity = '1';
+    panel.style.transform = 'translate3d(0,0,0) scale(1)';
+    panel.querySelectorAll('.smooth-nav-item, .smooth-nav-link').forEach(el => {
+      el.style.visibility = 'visible';
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+      el.style.animation = 'none';
+    });
+  };
+
+  btn.addEventListener('click', () => requestAnimationFrame(reveal), { passive: true });
 })();
 </script>
 
