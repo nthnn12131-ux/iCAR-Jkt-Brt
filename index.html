@@ -157,39 +157,13 @@
 </style>
 
 <style>
-/* MOBILE PERFORMANCE MODE — menu only, no expensive blur/filter/continuous animation */
+/* MOBILE PERFORMANCE MODE — hero decorative effects only (menu styling lives in #icar-mobile-nav-v2) */
 @media (max-width: 767px) {
-  #mobileMenuBackdrop {
-    background: rgba(0,0,0,.38) !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    opacity: 0;
-    transition: opacity .22s ease;
+  #mobileMenuBtn {
+    transition: transform .2s ease, background-color .2s ease;
   }
-  #mobileMenu.is-open #mobileMenuBackdrop { opacity: 1; }
-
-  #mobileMenuPanel {
-    transform: translate3d(22px,0,0);
-    opacity: 0;
-    transition: transform .28s cubic-bezier(.2,.8,.2,1), opacity .18s ease;
-    will-change: transform, opacity;
-    box-shadow: 0 18px 45px rgba(0,0,0,.22) !important;
-  }
-  #mobileMenu.is-open #mobileMenuPanel {
-    transform: translate3d(0,0,0);
-    opacity: 1;
-  }
-
-  .smooth-nav-item {
-    opacity: 1 !important;
-    transform: none !important;
-    animation: none !important;
-  }
-  .smooth-nav-link, #mobileMenuBtn, #mobileMenuClose {
-    transition: background-color .12s ease, color .12s ease, transform .12s ease !important;
-  }
-  .smooth-nav-link:active, #mobileMenuBtn:active, #mobileMenuClose:active {
-    transform: scale(.98);
+  #mobileMenuBtn:active {
+    transform: scale(.94);
   }
 
   /* Turn off expensive decorative effects on small screens */
@@ -220,88 +194,7 @@
 </style>
 
 
-<style id="smooth-mobile-nav">
-@media (max-width: 767px) {
-  #mobileMenu {
-    display: block;
-    visibility: hidden;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity .35s cubic-bezier(.22,1,.36,1), visibility 0s linear .35s;
-  }
-  #mobileMenu.is-open {
-    visibility: visible;
-    pointer-events: auto;
-    opacity: 1;
-    transition: opacity .35s cubic-bezier(.22,1,.36,1), visibility 0s linear 0s;
-  }
-  #mobileMenuBackdrop {
-    opacity: 0;
-    transition: opacity .45s cubic-bezier(.22,1,.36,1);
-  }
-  #mobileMenu.is-open #mobileMenuBackdrop {
-    opacity: 1;
-  }
-  #mobileMenuPanel {
-    transform: translate3d(18px, -10px, 0) scale(.97);
-    opacity: 0;
-    transition:
-      transform .5s cubic-bezier(.16,1,.3,1),
-      opacity .35s ease;
-    will-change: transform, opacity;
-  }
-  #mobileMenu.is-open #mobileMenuPanel {
-    transform: translate3d(0,0,0) scale(1);
-    opacity: 1;
-  }
-  .smooth-nav-item {
-    opacity: 0;
-    transform: translate3d(0, 10px, 0);
-  }
-  #mobileMenu.is-open .smooth-nav-item {
-    animation: mobileNavItemIn .45s cubic-bezier(.16,1,.3,1) forwards;
-  }
-  #mobileMenu.is-open .smooth-nav-item:nth-child(1) { animation-delay: .05s; }
-  #mobileMenu.is-open .smooth-nav-item:nth-child(2) { animation-delay: .09s; }
-  #mobileMenu.is-open .smooth-nav-item:nth-child(3) { animation-delay: .13s; }
-  #mobileMenu.is-open .smooth-nav-item:nth-child(4) { animation-delay: .17s; }
-  #mobileMenu.is-open .smooth-nav-item:nth-child(5) { animation-delay: .21s; }
-  #mobileMenu.is-open .smooth-nav-item:nth-child(6) { animation-delay: .25s; }
-  #mobileMenu.is-open .smooth-nav-item:nth-child(7) { animation-delay: .29s; }
-
-  .smooth-nav-link {
-    transition: transform .25s cubic-bezier(.22,1,.36,1),
-                background-color .25s ease,
-                color .25s ease;
-  }
-  .smooth-nav-link:active {
-    transform: scale(.97);
-  }
-  #mobileMenuBtn {
-    transition: transform .25s cubic-bezier(.22,1,.36,1), background-color .25s ease;
-  }
-  #mobileMenuBtn:active {
-    transform: scale(.92);
-  }
-  #mobileMenuIconOpen, #mobileMenuIconClose {
-    transition: opacity .22s ease, transform .3s cubic-bezier(.22,1,.36,1);
-  }
-}
-@keyframes mobileNavItemIn {
-  to {
-    opacity: 1;
-    transform: translate3d(0,0,0);
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  #mobileMenu, #mobileMenuBackdrop, #mobileMenuPanel,
-  .smooth-nav-link, #mobileMenuBtn {
-    transition: none !important;
-    animation: none !important;
-  }
-  .smooth-nav-item { opacity: 1 !important; transform: none !important; }
-}
-</style>
+<!-- old smooth-mobile-nav style block removed — replaced by #icar-mobile-nav-v2 below -->
 
 
 <style id="mobile-performance-fix">
@@ -553,54 +446,7 @@ nav,
 </style>
 
 
-<style id="mobile-menu-visibility-fix">
-@media (max-width: 767px) {
-  /* Fix: isi menu HP harus selalu terlihat saat drawer terbuka */
-  #mobileMenu.is-open #mobileMenuPanel,
-  #mobileMenu.is-open #mobileMenuPanel .smooth-nav-item {
-    visibility: visible !important;
-  }
-
-  #mobileMenu.is-open #mobileMenuPanel .smooth-nav-item {
-    opacity: 1 !important;
-    transform: translate3d(0,0,0) !important;
-    animation: none !important;
-  }
-
-  #mobileMenuPanel {
-    background: #fff !important;
-    color: #15150F !important;
-  }
-
-  #mobileMenuPanel .smooth-nav-link {
-    color: #15150F !important;
-    opacity: 1 !important;
-  }
-
-  #mobileMenuPanel .smooth-nav-link span {
-    color: inherit;
-  }
-
-  #mobileMenuPanel .smooth-nav-link:hover {
-    background-color: #F5F1E7 !important;
-  }
-
-  /* Tetap smooth, tapi tanpa efek yang bisa membuat isi terlihat kosong */
-  #mobileMenu {
-    transition: opacity .22s ease !important;
-  }
-
-  #mobileMenuPanel {
-    transition: transform .26s cubic-bezier(.22,.61,.36,1),
-                opacity .18s ease !important;
-  }
-
-  #mobileMenu.is-open #mobileMenuPanel {
-    transform: translate3d(0,0,0) scale(1) !important;
-    opacity: 1 !important;
-  }
-}
-</style>
+<!-- old mobile-menu-visibility-fix style block removed — replaced by #icar-mobile-nav-v2 below -->
 
 
 <style id="mobile-ticker-motion-fix">
@@ -629,126 +475,200 @@ nav,
 </style>
 
 
-<style id="mobile-menu-final-visibility">
+<!-- old mobile-menu-final-visibility style block removed — replaced by #icar-mobile-nav-v2 below -->
+
+
+<style id="icar-mobile-nav-v2">
+/* =========================================================
+   MOBILE NAVIGATION — single source of truth (mobile only)
+   Desktop nav (md:flex dropdown) is untouched by this block.
+   ========================================================= */
 @media (max-width: 767px) {
-  /* FINAL: paksa drawer dan seluruh isinya tampil saat menu dibuka */
+
+  /* --- Drawer open / close --- */
+  #mobileMenu {
+    display: block;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .3s ease, visibility 0s linear .3s;
+  }
   #mobileMenu.is-open {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 1;
+    transition: opacity .3s ease, visibility 0s linear 0s;
   }
 
+  #mobileMenuBackdrop {
+    background: rgba(10,10,7,.55);
+    opacity: 0;
+    transition: opacity .3s ease;
+  }
+  #mobileMenu.is-open #mobileMenuBackdrop {
+    opacity: 1;
+  }
+
+  /* --- Panel: dark, on-brand, easy to read --- */
+  #mobileMenuPanel {
+    display: flex;
+    background: #15150F;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.10);
+    box-shadow: 0 24px 70px rgba(0,0,0,.45);
+    transform: translate3d(16px,0,0);
+    opacity: 0;
+    transition: transform .32s cubic-bezier(.16,1,.3,1), opacity .22s ease;
+    will-change: transform, opacity;
+  }
   #mobileMenu.is-open #mobileMenuPanel {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    transform: translate3d(0,0,0) scale(1) !important;
+    transform: translate3d(0,0,0);
+    opacity: 1;
   }
 
-  #mobileMenu.is-open #mobileMenuPanel > * {
-    visibility: visible !important;
+  /* Header: brand + close */
+  #mobileMenuPanel > div:first-child {
+    border-bottom-color: rgba(255,255,255,.12) !important;
+  }
+  #mobileMenuPanel > div:first-child p:first-child {
+    color: rgba(255,255,255,.55) !important;
+  }
+  #mobileMenuPanel > div:first-child p:last-child {
+    color: #fff !important;
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+  }
+  #mobileMenuClose {
+    color: #fff;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.12);
+    transition: background-color .2s ease, transform .2s ease;
+  }
+  #mobileMenuClose:hover,
+  #mobileMenuClose:focus-visible {
+    background: rgba(255,255,255,.16);
+  }
+  #mobileMenuClose:active {
+    transform: scale(.92);
   }
 
-  #mobileMenu.is-open .smooth-nav-item,
-  #mobileMenu.is-open .smooth-nav-link {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    transform: none !important;
-    animation: none !important;
-    color: #15150F !important;
+  /* Nav items: staggered fade-in, generous tap targets */
+  .smooth-nav-item {
+    opacity: 0;
+    transform: translate3d(0,8px,0);
   }
-
   #mobileMenu.is-open .smooth-nav-item {
-    position: relative !important;
+    animation: mobileNavItemIn .38s cubic-bezier(.16,1,.3,1) forwards;
   }
+  #mobileMenu.is-open .smooth-nav-item:nth-child(1) { animation-delay: .04s; }
+  #mobileMenu.is-open .smooth-nav-item:nth-child(2) { animation-delay: .08s; }
+  #mobileMenu.is-open .smooth-nav-item:nth-child(3) { animation-delay: .12s; }
+  #mobileMenu.is-open .smooth-nav-item:nth-child(4) { animation-delay: .16s; }
+  #mobileMenu.is-open .smooth-nav-item:nth-child(5) { animation-delay: .20s; }
+  #mobileMenu.is-open .smooth-nav-item:nth-child(6) { animation-delay: .24s; }
 
-  #mobileMenu.is-open .smooth-nav-item > .smooth-nav-link {
-    display: flex !important;
-  }
-
-  #mobileMenu.is-open .smooth-nav-link span {
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
-  #mobileMenu.is-open #mobileMenuClose {
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-}
-</style>
-
-
-
-<style id="mobile-nav-bright-font-fix">
-@media (max-width: 767px) {
-  #mobileMenuPanel .smooth-nav-link { color: #F5F1E7 !important; }
-  #mobileMenuPanel .smooth-nav-link span { color: #F5F1E7 !important; }
-  #mobileMenuPanel .smooth-nav-link span.text-amberDark { color: #FFD166 !important; }
-  #mobileMenuPanel a[href="#contact"] { color: #FFFFFF !important; }
-  #mobileMenuPanel a[href="#contact"] span { color: rgba(255,255,255,.72) !important; }
-  #mobileMenuPanel nav > a:not([href="#contact"]),
-  #mobileMenuPanel nav > div { background: #15150F !important; }
-  #mobileMenuPanel nav > div .smooth-nav-link { background: #15150F !important; }
-  #mobileMenuPanel .smooth-nav-link:hover { background: #29291F !important; }
-}
-</style>
-
-<style id="mobile-nav-all-bright">
-@media (max-width: 767px) {
   #mobileMenuPanel .smooth-nav-link {
-    color: #FFFFFF !important;
-    text-shadow: 0 1px 8px rgba(255,255,255,.18);
+    color: #fff !important;
+    background: transparent;
+    border: 1px solid transparent;
+    font-size: .975rem;
+    letter-spacing: .01em;
+    min-height: 50px;
+    transition: background-color .18s ease, border-color .18s ease, transform .12s ease;
   }
-  #mobileMenuPanel .smooth-nav-link span {
-    color: #FFFFFF !important;
-  }
-  #mobileMenuPanel .smooth-nav-link span.text-amberDark {
-    color: #FFD166 !important;
-  }
+  #mobileMenuPanel .smooth-nav-link span { color: inherit; }
   #mobileMenuPanel .smooth-nav-link:hover,
   #mobileMenuPanel .smooth-nav-link:focus-visible {
-    color: #FFFFFF !important;
+    background: rgba(255,255,255,.10);
+    border-color: rgba(255,255,255,.10);
+    outline: none;
   }
-  #mobileMenuPanel .smooth-nav-link:hover span,
-  #mobileMenuPanel .smooth-nav-link:focus-visible span {
-    color: #FFFFFF !important;
+  #mobileMenuPanel .smooth-nav-link:active {
+    background: rgba(255,255,255,.16);
+    transform: scale(.98);
   }
-  #mobileMenuPanel nav > a:not([href="#contact"]),
-  #mobileMenuPanel nav > .smooth-nav-item {
-    background: linear-gradient(135deg, #252525, #15150F) !important;
-    border: 1px solid rgba(255,255,255,.12);
-    box-shadow: 0 6px 18px rgba(0,0,0,.14);
+
+  /* Active section (scroll-spy) gets a clear amber marker */
+  #mobileMenuPanel .smooth-nav-link.mobile-nav-active {
+    background: rgba(227,162,60,.14);
+    border-color: rgba(227,162,60,.35);
+    color: #E3A23C !important;
   }
-  #mobileMenuPanel nav > a:not([href="#contact"]):nth-of-type(1) { border-left: 4px solid #FFD166; }
-  #mobileMenuPanel nav > a:not([href="#contact"]):nth-of-type(2) { border-left: 4px solid #7DD3FC; }
-  #mobileMenuPanel nav > a:not([href="#contact"]):nth-of-type(3) { border-left: 4px solid #86EFAC; }
-  #mobileMenuPanel nav > a:not([href="#contact"]):nth-of-type(4) { border-left: 4px solid #F9A8D4; }
-  #mobileMenuPanel nav > .smooth-nav-item { border-left: 4px solid #C4B5FD; }
-  #mobileMenuPanel nav > a[href="#lokasi"] { border-left: 4px solid #67E8F9; }
-  #mobileMenuPanel nav > a[href="#contact"] {
-    background: linear-gradient(135deg, #F59E0B, #EA580C) !important;
-    color: #FFFFFF !important;
-    border: 0 !important;
+  #mobileMenuPanel .smooth-nav-link.mobile-nav-active .nav-dot {
+    opacity: 1;
+    transform: scale(1);
   }
-  #mobileMenuPanel nav > a[href="#contact"] span { color: #FFFFFF !important; }
-  #mobileMenuPanel nav > .smooth-nav-item .smooth-nav-link {
-    background: transparent !important;
+  .nav-dot {
+    width: 6px; height: 6px; border-radius: 999px;
+    background: #E3A23C;
+    opacity: 0; transform: scale(0);
+    transition: opacity .18s ease, transform .18s ease;
+    flex: none;
   }
-  #mobileMenuPanel nav > .smooth-nav-item .text-black\/35,
-  #mobileMenuPanel nav > .smooth-nav-item .text-black\/40 {
-    color: rgba(255,255,255,.65) !important;
+
+  /* "Model" sub-group */
+  #mobileMenuPanel .smooth-nav-item.rounded-2xl.overflow-hidden {
+    border-color: rgba(255,255,255,.12);
+    background: rgba(255,255,255,.04);
   }
+  #mobileMenuPanel .text-black\/40,
+  #mobileMenuPanel .text-black\/35 {
+    color: rgba(255,255,255,.5) !important;
+  }
+  #mobileMenuPanel .border-black\/5,
+  #mobileMenuPanel .border-black\/10 {
+    border-color: rgba(255,255,255,.12) !important;
+  }
+
+  /* Primary CTA stands out clearly */
+  #mobileMenuPanel a[href="#contact"] {
+    color: #15150F !important;
+    background: #E3A23C !important;
+    border-color: #E3A23C !important;
+    box-shadow: 0 10px 24px -8px rgba(227,162,60,.55);
+  }
+  #mobileMenuPanel a[href="#contact"] span {
+    color: rgba(21,21,15,.6) !important;
+  }
+  #mobileMenuPanel a[href="#contact"]:active {
+    transform: scale(.98);
+  }
+
+  /* Footer WhatsApp quick action */
+  #mobileMenuPanel .mobile-quick-contact {
+    border-top-color: rgba(255,255,255,.12) !important;
+  }
+  #mobileMenuPanel .mobile-quick-contact p {
+    color: rgba(255,255,255,.5) !important;
+  }
+  #mobileMenuPanel .mobile-quick-contact a {
+    color: #fff !important;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.14);
+    transition: background-color .18s ease;
+  }
+  #mobileMenuPanel .mobile-quick-contact a:hover,
+  #mobileMenuPanel .mobile-quick-contact a:active {
+    background: rgba(255,255,255,.15);
+  }
+
+  .smooth-nav-link svg { opacity: .55; }
+  .smooth-nav-link.mobile-nav-active svg { opacity: 1; }
+}
+
+@keyframes mobileNavItemIn {
+  to { opacity: 1; transform: translate3d(0,0,0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #mobileMenu, #mobileMenuBackdrop, #mobileMenuPanel, .smooth-nav-link, #mobileMenuBtn, #mobileMenuClose {
+    transition: none !important;
+    animation: none !important;
+  }
+  .smooth-nav-item { opacity: 1 !important; transform: none !important; }
 }
 </style>
-<style id="mobile-nav-white-final">
-@media (max-width: 767px) {
-#mobileMenuPanel a[href="#home"],#mobileMenuPanel a[href="#about"],#mobileMenuPanel a[href="#fleet"],#mobileMenuPanel a[href="#pricelist"],#mobileMenuPanel a[href="#lokasi"] { color:#fff !important; }
-#mobileMenuPanel a[href="#home"] *,#mobileMenuPanel a[href="#about"] *,#mobileMenuPanel a[href="#fleet"] *,#mobileMenuPanel a[href="#pricelist"] *,#mobileMenuPanel a[href="#lokasi"] * { color:#fff !important; }
-}
-</style>
+
 </head>
 <body class="font-sans antialiased text-ink">
 
@@ -825,27 +745,51 @@ nav,
         </button>
       </div>
 
-      <nav class="flex-1 overflow-y-auto overscroll-contain p-3">
-        <a href="#home" class="smooth-nav-item smooth-nav-link block rounded-2xl px-4 py-3.5 font-medium text-[#15150F] hover:bg-[#F5F1E7]">Beranda</a>
-        <a href="#about" class="smooth-nav-item smooth-nav-link block rounded-2xl px-4 py-3.5 font-medium text-[#15150F] hover:bg-[#F5F1E7]">Tentang Kami</a>
-        <a href="#fleet" class="smooth-nav-item smooth-nav-link block rounded-2xl px-4 py-3.5 font-medium text-[#15150F] hover:bg-[#F5F1E7]">Armada</a>
-        <a href="#pricelist" class="smooth-nav-item smooth-nav-link block rounded-2xl px-4 py-3.5 font-medium text-[#15150F] hover:bg-[#F5F1E7]">Harga</a>
+      <nav class="flex-1 overflow-y-auto overscroll-contain p-3 space-y-1.5">
+        <a href="#home" class="smooth-nav-item smooth-nav-link flex items-center gap-3 rounded-2xl px-4 py-3.5 font-medium">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h4a1 1 0 001-1v-4a1 1 0 011-1h0a1 1 0 011 1v4a1 1 0 001 1h4a1 1 0 001-1V10"/></svg>
+          <span class="flex-1">Beranda</span>
+          <span class="nav-dot"></span>
+        </a>
+        <a href="#about" class="smooth-nav-item smooth-nav-link flex items-center gap-3 rounded-2xl px-4 py-3.5 font-medium">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span class="flex-1">Tentang Kami</span>
+          <span class="nav-dot"></span>
+        </a>
+        <a href="#fleet" class="smooth-nav-item smooth-nav-link flex items-center gap-3 rounded-2xl px-4 py-3.5 font-medium">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M5 17h14M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0M3 17V9l2-5h14l2 5v8"/></svg>
+          <span class="flex-1">Armada</span>
+          <span class="nav-dot"></span>
+        </a>
+        <a href="#pricelist" class="smooth-nav-item smooth-nav-link flex items-center gap-3 rounded-2xl px-4 py-3.5 font-medium">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 14l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span class="flex-1">Harga</span>
+          <span class="nav-dot"></span>
+        </a>
         <div class="smooth-nav-item rounded-2xl overflow-hidden border border-black/5">
           <div class="px-4 pt-3.5 pb-2 text-[10px] uppercase tracking-[.18em] text-black/40">Model</div>
-          <a href="#fleet" class="smooth-nav-link flex items-center justify-between px-4 py-3 font-medium text-[#15150F] hover:bg-[#F5F1E7]"><span>iCAR V23</span><span class="text-xs text-black/35">V23</span></a>
-          <a href="#v27" class="smooth-nav-link flex items-center justify-between border-t border-black/5 px-4 py-3 font-medium text-[#15150F] hover:bg-[#F5F1E7]"><span>iCAR V27</span><span class="text-xs text-amberDark">V27</span></a>
+          <a href="#fleet" class="smooth-nav-link flex items-center justify-between px-4 py-3 font-medium"><span>iCAR V23</span><span class="text-xs text-black/35">V23</span></a>
+          <a href="#v27" class="smooth-nav-link flex items-center justify-between border-t border-black/5 px-4 py-3 font-medium"><span>iCAR V27</span><span class="text-xs text-amberDark">V27</span></a>
         </div>
-        <a href="#lokasi" class="smooth-nav-item smooth-nav-link block rounded-2xl px-4 py-3.5 font-medium text-[#15150F] hover:bg-[#F5F1E7]">Lokasi</a>
+        <a href="#lokasi" class="smooth-nav-item smooth-nav-link flex items-center gap-3 rounded-2xl px-4 py-3.5 font-medium">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span class="flex-1">Lokasi</span>
+          <span class="nav-dot"></span>
+        </a>
 
-        <a href="#contact" class="smooth-nav-item smooth-nav-link mt-2 block rounded-2xl px-4 py-4 text-center font-semibold bg-[#15150F] text-white shadow-lg">
+        <a href="#contact" class="smooth-nav-item smooth-nav-link mt-2 block rounded-2xl px-4 py-4 text-center font-semibold shadow-lg">
           PRE-BOOK NOW
-          <span class="block mt-1 text-[10px] font-normal tracking-[.18em] text-white/60">AMANKAN UNITMU</span>
+          <span class="block mt-1 text-[10px] font-normal tracking-[.18em]">AMANKAN UNITMU</span>
         </a>
       </nav>
 
-      <div class="px-5 py-4 border-t border-black/10">
-        <p class="text-[10px] uppercase tracking-[.18em] text-black/35">iCAR V27</p>
-        <p class="mt-1 text-xs text-black/55">Ready for your next adventure.</p>
+      <div class="px-5 py-4 border-t border-black/10 mobile-quick-contact">
+        <p class="text-[10px] uppercase tracking-[.18em] mb-2">Butuh bantuan cepat?</p>
+        <a href="https://wa.me/6287780070637" target="_blank" rel="noopener"
+           class="flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-medium">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.86 9.86 0 004.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.51 2 12.04 2zm0 18.02h-.01a8.2 8.2 0 01-4.18-1.14l-.3-.18-3.13.82.83-3.05-.2-.31a8.22 8.22 0 01-1.26-4.35c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 012.41 5.83c0 4.55-3.7 8.2-8.24 8.2zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.36-.77-1.86-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.86-.87 2.09 0 1.23.9 2.42 1.02 2.59.12.17 1.77 2.7 4.28 3.79.6.26 1.06.41 1.43.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+          <span>Chat WhatsApp</span>
+        </a>
       </div>
     </div>
   </div>
@@ -1880,50 +1824,6 @@ nav,
 </script>
 
 
-<script id="mobile-performance-fix-js">
-(() => {
-  const selectors = [
-    '#mobile-menu',
-    '[data-mobile-menu]',
-    '.mobile-menu',
-    '.mobile-drawer',
-    '.mobile-panel'
-  ];
-
-  const getMenu = () => {
-    for (const s of selectors) {
-      const el = document.querySelector(s);
-      if (el) return el;
-    }
-    return null;
-  };
-
-  const menu = getMenu();
-  if (!menu) return;
-
-  let timer;
-  const markAnimating = () => {
-    menu.classList.add('is-animating');
-    clearTimeout(timer);
-    timer = setTimeout(() => menu.classList.remove('is-animating'), 260);
-  };
-
-  // Listen only to common mobile-menu controls; does not alter design or navigation structure.
-  document.addEventListener('click', (e) => {
-    const trigger = e.target.closest(
-      '[aria-controls="mobile-menu"], [data-mobile-toggle], .mobile-menu-toggle, #mobile-menu-button, #menu-toggle, .hamburger'
-    );
-    const closer = e.target.closest(
-      '[data-mobile-close], .mobile-menu-close, #mobile-menu-close, .mobile-menu-overlay, #mobile-menu-overlay'
-    );
-    if (trigger || closer) markAnimating();
-  }, { passive: true });
-
-  menu.addEventListener('transitionstart', markAnimating, { passive: true });
-})();
-</script>
-
-
 <script id="home-nav-enhancement-js">
 (() => {
   const homeLinks = document.querySelectorAll('nav a[href="#home"]');
@@ -1963,28 +1863,35 @@ nav,
 </script>
 
 
-<script id="mobile-menu-final-visibility-js">
+<script id="icar-mobile-navigation-system-js">
 (() => {
   const menu = document.getElementById('mobileMenu');
-  const btn = document.getElementById('mobileMenuBtn');
-  if (!menu || !btn) return;
+  if (!menu) return;
+  const panel = document.getElementById('mobileMenuPanel');
+  const links = [...menu.querySelectorAll('.smooth-nav-link[href^="#"]')];
+  const sections = links.map(link => ({ link, section: document.querySelector(link.getAttribute('href')) })).filter(x => x.section);
 
-  const reveal = () => {
-    if (!menu.classList.contains('is-open')) return;
-    const panel = document.getElementById('mobileMenuPanel');
-    if (!panel) return;
-    panel.style.visibility = 'visible';
-    panel.style.opacity = '1';
-    panel.style.transform = 'translate3d(0,0,0) scale(1)';
-    panel.querySelectorAll('.smooth-nav-item, .smooth-nav-link').forEach(el => {
-      el.style.visibility = 'visible';
-      el.style.opacity = '1';
-      el.style.transform = 'none';
-      el.style.animation = 'none';
-    });
+  const updateActive = () => {
+    if (window.innerWidth >= 768) return;
+    const marker = window.scrollY + Math.min(window.innerHeight * .28, 220);
+    let current = null;
+    for (const item of sections) {
+      if (item.section.offsetTop <= marker) current = item;
+    }
+    links.forEach(link => link.classList.remove('mobile-nav-active'));
+    if (current) current.link.classList.add('mobile-nav-active');
   };
 
-  btn.addEventListener('click', () => requestAnimationFrame(reveal), { passive: true });
+  window.addEventListener('scroll', updateActive, { passive: true });
+  window.addEventListener('resize', updateActive, { passive: true });
+  updateActive();
+
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      links.forEach(x => x.classList.remove('mobile-nav-active'));
+      link.classList.add('mobile-nav-active');
+    }, { passive: true });
+  });
 })();
 </script>
 
