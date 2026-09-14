@@ -372,6 +372,186 @@
 }
 </style>
 
+
+<style id="home-nav-enhancement">
+/* Home/Beranda navigation: keep the original look, add only a subtle interaction */
+nav a[href="#home"] {
+  position: relative;
+  transition: transform 180ms cubic-bezier(.22,.61,.36,1),
+              opacity 180ms ease !important;
+}
+nav a[href="#home"]:active {
+  transform: scale(.96);
+  opacity: .82;
+}
+nav a[href="#home"].home-nav-active {
+  transform: translateY(-1px);
+}
+@media (max-width: 767px) {
+  nav a[href="#home"] {
+    transition: transform 180ms cubic-bezier(.22,.61,.36,1),
+                opacity 180ms ease,
+                background-color 180ms ease !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  nav a[href="#home"] { transition: none !important; }
+}
+</style>
+
+
+<style id="navbar-color-match">
+/* Navbar mengikuti warna halaman utama — tidak mengubah layout */
+header,
+nav,
+.navbar,
+#navbar {
+  background-color: #15150F !important;
+  background-image: none !important;
+}
+</style>
+
+
+<style id="premium-estimation-slider">
+/* Premium DP slider — ringan, native, dan tetap mengikuti warna website */
+.sim-slider-wrap {
+  padding-top: 22px;
+}
+
+.sim-dp-slider {
+  --slider-progress: 25%;
+  --slider-track: rgba(21,21,15,.12);
+  width: 100%;
+  height: 7px;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 999px;
+  outline: none;
+  cursor: pointer;
+  background: linear-gradient(
+    90deg,
+    #E3A23C 0%,
+    #E3A23C var(--slider-progress),
+    var(--slider-track) var(--slider-progress),
+    var(--slider-track) 100%
+  );
+  box-shadow: inset 0 1px 2px rgba(21,21,15,.08);
+  transition: box-shadow 180ms ease;
+}
+
+.sim-dp-slider:hover,
+.sim-dp-slider:focus-visible {
+  box-shadow:
+    0 0 0 5px rgba(227,162,60,.12),
+    inset 0 1px 2px rgba(21,21,15,.08);
+}
+
+.sim-dp-slider::-webkit-slider-runnable-track {
+  height: 7px;
+  border-radius: 999px;
+  background: transparent;
+}
+
+.sim-dp-slider::-moz-range-track {
+  height: 7px;
+  border-radius: 999px;
+  background: transparent;
+}
+
+.sim-dp-slider::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 23px;
+  height: 23px;
+  margin-top: -8px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  background: #E3A23C;
+  box-shadow: 0 3px 10px rgba(21,21,15,.20);
+  transition: transform 160ms cubic-bezier(.22,.61,.36,1), box-shadow 160ms ease;
+}
+
+.sim-dp-slider::-moz-range-thumb {
+  width: 17px;
+  height: 17px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  background: #E3A23C;
+  box-shadow: 0 3px 10px rgba(21,21,15,.20);
+  transition: transform 160ms cubic-bezier(.22,.61,.36,1), box-shadow 160ms ease;
+}
+
+.sim-dp-slider:active::-webkit-slider-thumb {
+  transform: scale(1.15);
+  box-shadow: 0 4px 14px rgba(227,162,60,.38);
+}
+
+.sim-dp-slider:active::-moz-range-thumb {
+  transform: scale(1.15);
+  box-shadow: 0 4px 14px rgba(227,162,60,.38);
+}
+
+.sim-slider-value {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  min-width: 48px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: #454B27;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 12px rgba(21,21,15,.14);
+  pointer-events: none;
+  transition: left 100ms linear, transform 160ms ease;
+}
+
+.sim-slider-value::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 9px;
+  height: 9px;
+  background: #454B27;
+  transform: translateX(-50%) rotate(45deg);
+  border-radius: 1px;
+}
+
+.sim-slider-scale {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  color: rgba(21,21,15,.45);
+  font-size: 10px;
+}
+
+@media (max-width: 767px) {
+  .sim-dp-slider {
+    height: 8px;
+  }
+  .sim-dp-slider::-webkit-slider-runnable-track {
+    height: 8px;
+  }
+  .sim-dp-slider::-moz-range-track {
+    height: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sim-dp-slider,
+  .sim-slider-value,
+  .sim-dp-slider::-webkit-slider-thumb,
+  .sim-dp-slider::-moz-range-thumb {
+    transition: none !important;
+  }
+}
+</style>
+
 </head>
 <body class="font-sans antialiased text-ink">
 
@@ -474,6 +654,11 @@
   </div>
 </div>
 
+
+  <!-- HERO -->
+  <section id="home" class="relative overflow-hidden bg-ink pb-16 pt-32 md:pb-24 md:pt-40">
+    <div class="pointer-events-none absolute -top-32 right-[-10%] h-[520px] w-[520px] md:h-[640px] md:w-[640px] rounded-full opacity-70 blur-3xl"
+         style="background: radial-gradient(circle, rgba(227,162,60,0.35) 0%, rgba(69,75,39,0.15) 45%, transparent 70%);"></div>
 
 <div class="relative mx-auto grid max-w-content grid-cols-1 items-center gap-14 px-6 md:grid-cols-2 md:gap-8 md:px-10">
       <div class="relative z-10">
@@ -931,8 +1116,15 @@
                 <span>Uang muka (DP)</span>
                 <span id="simDpLabel" class="rounded-full bg-amber/10 px-3 py-1 font-medium text-amberDark">20%</span>
               </label>
-              <input id="simDp" type="range" min="10" max="50" step="5" value="20" class="mt-3 w-full accent-amber">
-              <p class="mt-1 text-xs text-stone">Geser 10%&ndash;50% dari harga OTR.</p>
+              <div class="mt-4 relative sim-slider-wrap">
+                <div class="sim-slider-value" id="simDpBubble">20%</div>
+                <input id="simDp" type="range" min="10" max="50" step="5" value="20"
+                       class="sim-dp-slider w-full" aria-label="Uang muka atau DP">
+                <div class="sim-slider-scale" aria-hidden="true">
+                  <span>10%</span><span>20%</span><span>30%</span><span>40%</span><span>50%</span>
+                </div>
+              </div>
+              <p class="mt-2 text-xs text-stone">Geser untuk mengatur DP dari 10% hingga 50%.</p>
             </div>
             <div>
               <label class="flex items-center justify-between text-sm text-ink/70">
@@ -1531,6 +1723,45 @@
   }, { passive: true });
 
   menu.addEventListener('transitionstart', markAnimating, { passive: true });
+})();
+</script>
+
+
+<script id="home-nav-enhancement-js">
+(() => {
+  const homeLinks = document.querySelectorAll('nav a[href="#home"]');
+  if (!homeLinks.length) return;
+
+  homeLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      homeLinks.forEach(x => x.classList.remove('home-nav-active'));
+      link.classList.add('home-nav-active');
+      setTimeout(() => link.classList.remove('home-nav-active'), 500);
+    }, { passive: true });
+  });
+})();
+</script>
+
+
+<script id="premium-estimation-slider-js">
+(() => {
+  const slider = document.getElementById('simDp');
+  const bubble = document.getElementById('simDpBubble');
+  if (!slider || !bubble) return;
+
+  const updateSliderVisual = () => {
+    const min = Number(slider.min) || 0;
+    const max = Number(slider.max) || 100;
+    const value = Number(slider.value);
+    const pct = ((value - min) / (max - min)) * 100;
+
+    slider.style.setProperty('--slider-progress', pct + '%');
+    bubble.style.left = pct + '%';
+    bubble.textContent = value + '%';
+  };
+
+  slider.addEventListener('input', updateSliderVisual, { passive: true });
+  updateSliderVisual();
 })();
 </script>
 
