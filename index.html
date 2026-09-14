@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>iCAR Jakarta — Dealer Resmi SUV Elektrifikasi iCAR</title>
+<title>iCAR Jakarta — iCAR V27 PRE-BOOK NOW</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -182,7 +182,7 @@
               <a href="#fleet" class="flex items-center justify-between px-4 py-3.5 text-sm text-white/80 transition-colors hover:bg-white/[0.06] hover:text-white">
                 <span>
                   <span class="block">iCAR V23</span>
-                  <span class="mt-0.5 block text-[11px] font-medium text-amber/90">mulai Rp389,9 Jt</span>
+                  <span class="mt-0.5 block text-[11px] font-medium text-amber/90">mulai Rp399,9 Jt</span>
                 </span>
                 <span class="text-[10px] font-medium uppercase tracking-wide text-white/35">Boxy EV</span>
               </a>
@@ -199,7 +199,42 @@
         <li><a href="#lokasi" class="text-sm text-white/85 hover:text-white">Lokasi</a></li>
       </ul>
       <a href="#contact" class="hidden md:inline-block rounded-full bg-amber px-5 py-2.5 text-sm font-medium text-ink hover:bg-amberDark transition-colors">Hubungi Kami</a>
-    </nav>
+    
+      <button id="mobileMenuBtn" type="button" aria-label="Buka menu" aria-expanded="false"
+        class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-black/10 bg-white/80 text-[#15150F]">
+        <span class="sr-only">Buka menu</span>
+        <svg id="mobileMenuIconOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg id="mobileMenuIconClose" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M6 18L18 6"/>
+        </svg>
+      </button>
+</nav>
+
+<!-- Mobile Navigation: hanya tampil di HP, desktop tidak berubah -->
+<div id="mobileMenu" class="hidden md:hidden fixed inset-x-0 top-0 z-[70]">
+  <div id="mobileMenuBackdrop" class="fixed inset-0 bg-black/30 backdrop-blur-sm"></div>
+  <div class="relative mx-3 mt-3 rounded-2xl bg-white shadow-2xl border border-black/10 overflow-hidden">
+    <div class="flex items-center justify-between px-5 py-4 border-b border-black/10">
+      <span class="font-semibold tracking-wide text-[#15150F]">Menu</span>
+      <button id="mobileMenuClose" type="button" aria-label="Tutup menu"
+        class="w-9 h-9 rounded-xl bg-[#F5F1E7] flex items-center justify-center text-[#15150F]">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M6 18L18 6"/>
+        </svg>
+      </button>
+    </div>
+    <div class="p-3">
+      <a href="#home" class="mobile-nav-link block rounded-xl px-4 py-3 font-medium text-[#15150F] hover:bg-[#F5F1E7]">Home</a>
+      <a href="#v27" class="mobile-nav-link block rounded-xl px-4 py-3 font-medium text-[#15150F] hover:bg-[#F5F1E7]">iCAR V27</a>
+      <a href="#colors" class="mobile-nav-link block rounded-xl px-4 py-3 font-medium text-[#15150F] hover:bg-[#F5F1E7]">Warna</a>
+      <a href="#specs" class="mobile-nav-link block rounded-xl px-4 py-3 font-medium text-[#15150F] hover:bg-[#F5F1E7]">Spesifikasi</a>
+      <a href="#contact" class="mobile-nav-link block mt-2 rounded-xl px-4 py-3 text-center font-semibold bg-[#15150F] text-white">PRE-BOOK NOW</a>
+    </div>
+  </div>
+</div>
+
   </header>
 
   <!-- HERO -->
@@ -327,15 +362,15 @@
 
         <div>
           <div class="flex gap-3" id="typeButtons">
-            <button data-id="X" data-drive="RWD" data-price="Rp 389,9 Juta" data-battery="59,9 kWh" data-power="136 PS" data-range="360 km" data-adas="Belum tersedia" class="type-btn flex-1 rounded-xl border border-amber bg-amber/10 px-4 py-3 text-left transition-colors">
+            <button data-id="X" data-drive="RWD" data-price="Rp 399,9 Juta" data-battery="59,9 kWh" data-power="136 PS" data-range="360 km" data-adas="Belum tersedia" class="type-btn flex-1 rounded-xl border border-amber bg-amber/10 px-4 py-3 text-left transition-colors">
               <p class="font-display text-lg text-white">Tipe X</p>
               <p class="mt-0.5 text-xs text-white/50">RWD</p>
             </button>
-            <button data-id="Y" data-drive="RWD" data-price="Rp 439,9 Juta" data-battery="59,9 kWh" data-power="136 PS" data-range="360 km" data-adas="16 fitur ADAS" class="type-btn flex-1 rounded-xl border border-white/15 px-4 py-3 text-left transition-colors hover:border-white/35">
+            <button data-id="Y" data-drive="RWD" data-price="Rp 449,9 Juta" data-battery="59,9 kWh" data-power="136 PS" data-range="360 km" data-adas="16 fitur ADAS" class="type-btn flex-1 rounded-xl border border-white/15 px-4 py-3 text-left transition-colors hover:border-white/35">
               <p class="font-display text-lg text-white">Tipe Y</p>
               <p class="mt-0.5 text-xs text-white/50">RWD</p>
             </button>
-            <button data-id="Z" data-drive="iWD" data-price="Rp 499,9 Juta" data-battery="81,8 kWh" data-power="211 PS" data-range="430 km" data-adas="ADAS + Intelligent Driving" class="type-btn flex-1 rounded-xl border border-white/15 px-4 py-3 text-left transition-colors hover:border-white/35">
+            <button data-id="Z" data-drive="iWD" data-price="Rp 529,9 Juta" data-battery="81,8 kWh" data-power="211 PS" data-range="430 km" data-adas="ADAS + Intelligent Driving" class="type-btn flex-1 rounded-xl border border-white/15 px-4 py-3 text-left transition-colors hover:border-white/35">
               <p class="font-display text-lg text-white">Tipe Z</p>
               <p class="mt-0.5 text-xs text-white/50">iWD</p>
             </button>
@@ -344,7 +379,7 @@
           <div class="mt-6 rounded-xl border border-white/10 p-5">
             <div class="flex items-baseline justify-between">
               <p class="text-sm text-white/50">Harga OTR mulai dari</p>
-              <p id="typePrice" class="font-display text-2xl text-white">Rp 389,9 Juta</p>
+              <p id="typePrice" class="font-display text-2xl text-white">Rp 399,9 Juta</p>
             </div>
             <div class="mt-4 grid grid-cols-2 gap-3 text-center md:grid-cols-4">
               <div>
@@ -494,7 +529,7 @@
         <div class="flex flex-col rounded-2xl border border-ink/10 bg-white p-8">
           <p class="font-display text-2xl text-ink">Tipe X RWD</p>
           <p class="mt-1 text-xs text-stone">RWD &middot; 136 PS &middot; Baterai 59,9 kWh</p>
-          <p class="mt-6 font-display text-3xl text-ink">Rp 389,9 Juta</p>
+          <p class="mt-6 font-display text-3xl text-ink">Rp 399,9 Juta</p>
           <ul class="mt-6 flex-1 space-y-2 text-sm text-ink/70">
             <li>Jangkauan hingga 360 km (NEDC)</li>
             <li>Isi daya DC 30&ndash;80% sekitar 30 menit</li>
@@ -505,7 +540,7 @@
         <div class="flex flex-col rounded-2xl border border-ink/10 bg-white p-8">
           <p class="mt-1 font-display text-2xl text-ink">Tipe Y RWD</p>
           <p class="mt-1 text-xs text-stone">RWD &middot; 136 PS &middot; Baterai 59,9 kWh</p>
-          <p class="mt-6 font-display text-3xl text-ink">Rp 439,9 Juta</p>
+          <p class="mt-6 font-display text-3xl text-ink">Rp 449,9 Juta</p>
           <ul class="mt-6 flex-1 space-y-2 text-sm text-ink/70">
             <li>Basis sama dengan Tipe X, ditambah 16 fitur ADAS</li>
             <li>Isi daya DC 30&ndash;80% sekitar 30 menit</li>
@@ -517,7 +552,7 @@
           <p class="text-xs font-medium text-amberDark">Paling Diminati</p>
           <p class="mt-1 font-display text-2xl text-ink">Tipe Z iWD</p>
           <p class="mt-1 text-xs text-stone">iWD (AWD) &middot; 211 PS &middot; Baterai 81,8 kWh</p>
-          <p class="mt-6 font-display text-3xl text-ink">Rp 499,9 Juta</p>
+          <p class="mt-6 font-display text-3xl text-ink">Rp 529,9 Juta</p>
           <ul class="mt-6 flex-1 space-y-2 text-sm text-ink/70">
             <li>Jangkauan hingga 430 km (NEDC)</li>
             <li>Dual motor iWD + ADAS dan Intelligent Driving lengkap</li>
@@ -543,9 +578,9 @@
             <tbody class="divide-y divide-ink/5">
               <tr>
                 <td class="px-6 py-3.5 text-stone">Harga OTR Jakarta</td>
-                <td class="px-6 py-3.5 font-medium text-ink">Rp 389,9 Juta</td>
-                <td class="px-6 py-3.5 font-medium text-ink">Rp 439,9 Juta</td>
-                <td class="px-6 py-3.5 font-medium text-ink">Rp 499,9 Juta</td>
+                <td class="px-6 py-3.5 font-medium text-ink">Rp 399,9 Juta</td>
+                <td class="px-6 py-3.5 font-medium text-ink">Rp 449,9 Juta</td>
+                <td class="px-6 py-3.5 font-medium text-ink">Rp 529,9 Juta</td>
               </tr>
               <tr>
                 <td class="px-6 py-3.5 text-stone">Penggerak</td>
@@ -602,15 +637,15 @@
       <div class="mt-6 grid grid-cols-1 gap-4 rounded-2xl bg-olive/5 p-6 md:grid-cols-3">
         <div>
           <p class="text-xs uppercase tracking-wide text-stone">OTR Jakarta &middot; Tipe X</p>
-          <p class="mt-1 font-display text-xl text-ink">Rp 389,9 Jt</p>
+          <p class="mt-1 font-display text-xl text-ink">Rp 399,9 Jt</p>
         </div>
         <div>
           <p class="text-xs uppercase tracking-wide text-stone">OTR Jakarta &middot; Tipe Y</p>
-          <p class="mt-1 font-display text-xl text-ink">Rp 439,9 Jt</p>
+          <p class="mt-1 font-display text-xl text-ink">Rp 449,9 Jt</p>
         </div>
         <div>
           <p class="text-xs uppercase tracking-wide text-stone">OTR Jakarta &middot; Tipe Z</p>
-          <p class="mt-1 font-display text-xl text-ink">Rp 499,9 Jt</p>
+          <p class="mt-1 font-display text-xl text-ink">Rp 529,9 Jt</p>
         </div>
       </div>
       <p class="mt-3 text-xs text-stone/70">Seluruh harga pada halaman ini adalah harga OTR (on the road) DKI Jakarta. Gulir ke bawah untuk simulasi cicilan tiap tipe.</p>
@@ -684,7 +719,7 @@
           <div class="rounded-xl bg-sand p-6">
             <div class="flex items-baseline justify-between">
               <p class="text-sm text-stone">Harga OTR</p>
-              <p id="simOtr" class="font-display text-xl text-ink">Rp 389,9 Juta</p>
+              <p id="simOtr" class="font-display text-xl text-ink">Rp 399,9 Juta</p>
             </div>
             <div class="mt-3 space-y-2 border-t border-ink/10 pt-3">
               <div class="flex items-baseline justify-between">
@@ -740,80 +775,83 @@
           <div id="v27Glow2" class="pointer-events-none absolute -bottom-10 -right-10 h-56 w-56 rounded-full bg-sky-400/10 blur-3xl"></div>
                     <div id="v27PhotoWrap" class="relative overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-[0_30px_70px_-25px_rgba(0,0,0,0.6)]">
             <img id="v27Photo" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwMDAgQDAwMEBAQFBgoGBgUFBgwICQcKDgwPDg4MDQ0PERYTDxAVEQ0NExoTFRcYGRkZDxIbHRsYHRYYGRj/2wBDAQQEBAYFBgsGBgsYEA0QGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBj/wAARCAD+Af8DASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD0HxOP+K21fH/P7N/6GaylrV8Uf8jrq/P/AC+zf+hmsoZoAcM0vtRS/SgBMZppp30pCMUAMpRxQQaUUAKKXNHaigA70Un0paAHinc00UooAB060o96OKB1oAeOmc08HIpgp1ADhR0NAOaKAAmkHNLigfSgBacKQUtACUU7tSUAMoOacaaTigBpox6UGm96QAetN4px6U00wD3ozQaQdKAHUlJml60AB6daSlPSkzQAc5o5zRSjpQAGm0tJQAZ4paSkFADs4pMmk5pKAF60e5o5oPSgAoxmkpcGgBAO1KBg0uKMZoAXPHWjOaKQUAKc0UUdaAG/WkGadSY9aAACnDpSD2paADikpaO9AABzS0YooAt+KePHGsf9f03/AKGaygea1PFBz421j/r9m/8AQzWUKAJPwpaaKUdaAHUnWiigBMe9LigD3pR0oATFFOpMdxQAlAp2KMUAKKXv1pPpTsetAw604YpBTgO9AhRSgUCl696AF96XFAFOoAb29aUUUdaQC8etHNIOKUH1pgLS45o7Vl6v4m8N6A8ceu+INM0x5V3Rpd3Cxs4zjIBOSM8ZoA0yABTCBWRZeMvCOpvs07xTo103cRXaH+ta7HGD2IyCOhHqKAG44pMUEmk59KQwIFMp5zTSKYhDSfhS0nNIBO9HeijNMBRRSUtIYc4pRSfSnAUxDaD0p2KSkMYRxRjvT8ZNG2mIZ1op2KAKAGgc0tLRigBMClwaB1pcUAJjmlx3paSgAxnrRRSZ4oADSUtJQAUd6PrRQAUopO9KKAF7UUUHpQAUvekz70UAWPEpz4y1f/r9m/8AQzWWOelaXiUf8Vnq3/X5N/6GazRQA6nCmc9qcKAH0uKTPFGTQAo60oFJxinL0oAMUAe1KMZxkZ9Kv2miavekCz0q9nz3SBiPzxigChjmlx6V1Ft8PfFtxjOmLbg97iZE/TJNakHwr1Y83eq6fAO+zfIf5ClcZwgoPNelwfDDSozm98Q3EnqsECp+pJrWt/AXguLAkS9uj/t3JH/oIFFwseF634h0LwzYLe+IdYs9MgY4RrmTaXPcKvVvwFc5YfGL4ZX+pxWFt4wsvPlYInmLJGpJ6Dcy4H419PSfCj4U3+oLql/8ONF1O8VBGtxf2pumVR0AL5wOT0rRgsPB/htMWGg+HNFjX/nnaW9sB+OBRzBY8NjimlbEUUkh7BFLfyrStvDuv3WDDouoSA9xbsB+or1K/wDih4F0vIv/AB74ZsyOofU4FI/ANXLah+0Z8HLEkXPxP0NyO0Mzzf8AoCmldhYyYvAXi2UAjRJk/wCujKn8zV2P4a+KHGXhs4f9+5X+mawrz9rT4JW+dvjG5uSO1tpdy+fxKCsKf9sn4RLL5cB8UXbHp5embM/99yCi7DQ9CT4X6wT++1PTY/ozt/SrC/C9gf33iG3H+5Ax/ma8gn/bQ8Cjf9m8J+K5wGIXP2aPcBxnBl4+lYFz+3J4bQssHgPViQcEXGpQRkH3AU0XYaH0GnwxsQf3niKQ/wC7bgfzNWo/hroQ/wBZrV630RB/SvmCT9ui1B/dfD0Y/wCmmtD+kNQN+3TJn5Ph7Zf8C1h/6Q0tQ0Pqxfhx4a76nfn/AIEo/wDZa8+8V/sn/Cfxp4ruPEOt6j4me8mRIz5WpJGiKihVVV8o4HGcZ6knvXi8f7dMuf3nw7siP9jWHz+sNb2jftueGby8SHXPBWq2EZODPZXcd3t9yhCE/hk0ahodlF+xV8L7KYXWkeJPGdjKvR0vbeYfiDCMj2NPf4L+LvACy3fha6l8aabtJbRppxYzBv70fDLu9lK59DXqngvxzoXjTQIfEHhTV4dRsZG2+ZHkFGHVHU4KMM8qQDXZapqFtpPhe+164hnmt7O0lvJIoF3SMsaF2VR3bCkAetFxnz/8PPFfwu8da4PDdzFrHh3xGHaH+ytUmCmSRfvRxvgZcc/IwV/Y16v/AMKy8Pg8refjcH/Cvzy+LHx2l+JnjVfE9t4P03QLnaFaW2uJHluFXBiaU8DzUxxIoB6DoBXYWf7cnxks9ItbF7DwveyQRLG13dWUrSzkDG9ysoBY9yAMmnYVz7cPwy8Pn/n8H/bc/wCFNPwu0Bukt8v/AG2/+tXxYP25vjKTxpHg8D0/s2b/AOPVIn7cfxkzzo/g8/8AcOmH/talqGh9kv8ACnRW+5e36f8AA1P81qB/hNpxHyaveqfdEP8ASvkRP24/i91bQfBzf9uM4/8Aa1WIv24/inkeZ4T8Hv8ASC5X/wBq0ahofVL/AAjQ/c12Uf71up/karyfCW9A/c63AT/twEfyavm6L9uXx+APP8B+FX/3ZLpP/ZjWhb/tz+JyR5/w40B/Xy9RuF/mpp6hoe7SfCnX1/1d9YSfXcv9KqSfDPxZHnZbWsv+5OB/MV5XbftyXJI+1fC+2Pr5OtMP/QoTWxb/ALcGhvgXfw11RPXydVif/wBCjWjUNDr5fA/iuHO/RLhgO8ZV/wCRqhNoWtWx/wBI0i+jA6loG/wqvaftpfDybAu/B/iu3/3DbS/+1FrftP2uPg/cAea3ie0z/wA9dL3Y/wC+Hai4HNurRnEgKezDH86QKWGVUsPbmu9i/aN+BmoqBP4tjjB7X2l3KfzjI/Wnv4o/Z28Trz4l8Eys/c3YtH/MlCKLhY8+xg4IwfQ0uDXbT/CvwVrNu0vgX4j32l3B5RbbVYdWtSf9qCVmJH+6yn3rzrUP+Eg8G+MLXwr8Rbew02e/bZpWuQMy6bqTf889z8283+xIcHs1O4F7GKaevWrF3a3Nldva3lvJbzxnDxyLtZfwqD8KYhOtGKUUUAJS4o6dqOfWgBaSikoADimk8UGkz7UAKOTS4pueadxigBKX60lHWgAp1J3ooAU9KbSmkNAB3o5zScCnCgC14oGPG2sD/p9m/wDQzWUK1/FQ/wCK31j/AK/Zv/QzWRikMUE5pw600UtAh1KKaKCeKYFmxsrvUtRjsrKPzJpDwCcAAdST2A7mvR9H8B6TCitftJqE3f5jHF+Cjkj6n8K8Gtfjvp3hf4uQ/DnRvCN14g1/Ubu3sDNHeJDHCZCDsxtYkjO5ug4x2r6piinhJVZrcqDgMEY5Hr1FS2UiTTdI06wUfY9Ptbf3jiUH88ZrVaYInzOzfU5qgJJVTBuDn/ZRR/PNQlTMwRpZnZjgAyEc/hipA5H4o/GXwd8J9Bgv/E9xO1xdsY7LT7RQ9xcsPvFQSAqjIy7EAZHU8V866z+2xKwf+xvDGg2o/hOparJcuPqkEYH4bq+dv2lPHQ8d/HnW9RtLgyaZZynS9OG4lRBCSrMMn+OTe/8AwIV4/lwvWqsK59Rax+2H8TL6UR6frGhWO5sAWGibz/31O7fyrgNc/aQ+OEqCSf4k63HHKzBY7JorXAGP+eaD1HevJdNJa83H+EfqeP8AGn63MJLyOEdIoxx7nn+WKdkI6dviX498T6otvqnjDxHdhwS73OqzyAADJON2O1cm+u3k8pacrKf70hLn9TUmmosGmane5wVg8pT7ucfyrGAwe9MDT/ta5/hKL/uoBUb6lev1uZPwOKpBh70bhnvQBI89w/3p5D9WNW9OLBJJWJOSF5P4/wCFUcr6H8607UAW0Sd25/M/4CgDUsgJ9Ut7fA5ZV/Ws/UZhcatc3QwTLM5H0zgVp6OQNYa4xxFHJN+SnH9KwlzsXPZAfz5oAcGx1J/Cjevp+tQbj60m+kBZDrnt+dPWUKegqnk+tAY0Ae9/s3fF+b4cfFi1F/dsNB1R0s9SjY5VVJwk/wDvRsc5/ulhX6d2N8gVoHCyAc7TyGU8Ee4P9a/E+3kKTqTyp4I9RX6b/s2fEKXxv8DdKubm487VNGI0y+ycs+xR5bn/AHo9vPqGqZdykfDXxs8EyfDH48+IPCSxsLGGf7Rp7t0e0l+eIj1wDsPuhrgROzc5Nfdv7cPw2TWPh1pHxO06ENc6NILK9dRy1pM3yMfZJTj/ALbGvhDaE4qtyWTrOfU/nTxcEfxH86hhgnuCRBGz46kdB+NP+x3C3kdtIAjyfd3Hj9KAJ0um6FjU6XLH+I0q6HcnrPEPoCagkijt5TF5/mMpwdqcA/XNAF9bgkDk/nTg+TleD/OqKOu3q2as7HXbu7jPWgCzHOR3/CriSoTgSNj1xWaCw6rn6ipkYEhSgH4UAakcgAyJFPt3q7Z3KiXY4BDdCTjFZI8tQvBU/WvS/B3g3Q9X0K01W7kvndi2+HeqISrY4IGccetAGHbpFI2ChH0bFbVppcU6AHzCD2yD/Ou+tvBnhbPGmMPpcSf/ABVbll4N8N7gFs5V+lw/+NAHl7eDll+e3jKt6+Sp/lVXUdP1yLSH0q61a6l09yGazlmcxEjofLYlcj1xX0Fp/gvRCBsa7i+k27+Yql4q+H7/ANlPPC4urdRktjDx+5Hp7igDzvRPjb410jSLPRvEMdt4n0i0RYYo7kCO8gjAACxXI5yAOBIGB6H1r17TNS07WtEtda0W8F5pt2CYZtuxlZeHjkT+CVCcMh6ZBGQQT816xp81hfPBIpGDxmtXwD4yn8E6/K8qTXGi3xUalZxDc/y8LcRD/nsgJ4/jXKHqpDA+ixSj601Xikt4bi3uIbm3njWaC5gbdHPEwysiHupH4jkHBBFANADu2KPwozTc9eaAFpOgoyeuaTNACH2FJ7mlxxRjjFACDGaXr3oxzmjNAC9qQe9JnjrQDxQA7tR0NJk0GgBcijim84pR2oAMZoxinUlAF3xV/wAjvrGP+f2b/wBDNZHetjxT/wAjtrH/AF+zf+hmscUAKKXFIKUe9IBe1ZXiLXLXwz4U1LxDe4MNhbtcMp/jIHyr+LFR+NapHFeDftM+KRZeFNN8IwS4k1CT7ZcgHnyYzhAfq+T/AMApgXP2NPCV34s+NmufFDW1M39lK5jlb+O9ud2SPXbH5h9ty192ghV614/+zn4MXwF+zpoGmyw+VqF/H/a19xg+bOAyqfdYxEv4GvVhLnqazbuUiw0hxXAfGbxs3gH4EeJvE0Muy8itDbWR7/aJv3cePoWLf8Brty4PFfIv7bPjBUtvDXgSGXj59avVB7DMUIP/AJFP5ULVgz41IFxq0cG4skQCknvjkn86saxJiwWPP3nHHsKr6SrM0tw/U8Z9zyf6VBq0268WMH7i/qf8itCSfS4gQCf426+w4/xrKuZ/tF9LP2dyR7Dt+laysbfTJWzgpFgfU8f1P5Vh9BQBvxi2t9DhV5kMc0xdmbo21en5mox/ZLcZt8/TFVdU/dWmn2v9yDeR7sc/4VmZ5oA6EWNk43LDGwPdTx/OkbS7N1I8rafVSaoaPMUvfKJ+VwePftW79KQHMS2skV61sgLsOmO4q5G22QLnhB/IU29Odbwp6bc/lmokPyu3t/M0wNnTn2aRq0/dbbyx9WIFUfJJjdUGWztAHfHFW7MY8MXX/Ta5ii/Lmltk3GI/3pM/+PUAZQhYMVcFSpwQexphUirzDdI7HuSf1qtwRSAgIz2pduKmC0FcDpQBseG9Jg1CSWa6BMUWFCA43E+pr6J/ZZ8YJ4M/aAHhaabZpfiOD7Mqs3CzrloT9Sd6f8DFeB+E3P2G7A/56r/6DUV7rF5pfju1v7GZobmzMUsMgPKSK29W/BgKLAfrnqGk6Z4u8Eat4Q1pPM0/UbWS0nHcRyKVJHupww9wK/JLxV4a1Xwf421bwprKbdQ0q7ks5/RmRsbh7MMMPZhX6l/D3xlZ+MfBWg+MrTAg1O1SZ0B/1bHiRP8AgLhh+FfK37c3w/XSvHujfEixgxbazD9gv2UcC6hX92x93i4/7ZGpixs+YtHjP9mZ9ZGz+lJqoaKOC7HWGQH8P8ipNFlU6e656SH+Qqe/h8/TJ0HOUJH1HNWIt3NykFjJcL0C5X3J6fzrmUOTyc56mrN5dl/D9lGDy33v+A8f1qjE3y80gLKnFWIpWeSOOSRtuQM56CqYbJqQHnIoA1LuE2zJtkZgc8n1qFZXz981Y1Mv9iSQqww/U+4//VVBJM9KAL+9iqsWJ7cmvWfhbqZl0e60525t5A6D0V//ALIH868jjO6Eiuv+HOoi08aQQs2Eu0aAj3+8v6rj8aAPerabpzW5ZTYI5rl4JCCK1bafBHNAju9PusbRmuntLgOgUsMY5zXnljd9Bmuo0653YXPBGDSGebeM/DUGpC5u7G1YRR5fCgt5aZ7+38q8evrRrScoykYr6s0QnStWlsLvHkzqFEh6H+6foc4NeUfFvwE+i3Talp8J/s+duAo/1L90+h6j8R2pgc/8L/HqaHdr4S1y5WPRruYtZXUrYXTrhzyrHtBKevZHw/Rnr20pJFK8UqNHIjFXRhgqwOCD7ivkeaMMHilQOrAqysMgg9QRXuXwk8cS+INO/wCES1q4MmtafBmyuJGy2oWiL9xj3mhUderxgHrGcsD0bmg9OKUCg0AN7UcUGkoAcOlJ9aUdKb9aQDqb0pfoaMUwGnmkzSkZox7UAKKdjNIKXtzQAUYpaXtQADGKPwo7UlAFzxRn/hNdY/6/Zv8A0M1kDrW14pA/4TbWP+v2b/0M1j49KAAc0Z9qXHFGDigByruYKCOeOe1fKEqQ/GT9sGy0ZbczWdzqKW2/zDhLODlyAP8AYRz9Wr6A+JniL/hFfhTrWrq+ybyPs8Bzz5knyj8huP4V5r+xT4WfUfGviXxzdISthbLp9szD/lpOdzke4RMf8DpPYaPtxZgzFlUIp6KOw7CpVkqgnygZNTrIOmayKLkZaWRY05ZiFH1Nfmj+0T4vXxl8e/FWqwTeZaJdjTLQ548m3Hl5HsSrH/gVfoX4z8SxeD/hj4i8VuwB0vTZ7mPJ6yBCIx+Lla/KTUpH8yGORy8gTe5PdmOSf8+tXAlklrcW8NmEeXDElmGDWZIGn1BnPR34+lKTmpLZcz59ATViJ7+TbpgGeZJP0UZ/mRWbBC9xOIoxkn+VWtSc74Yuypu/EnP8sUzSw7axbxqcB3Cn6d6AH664fXp1U5WPbGP+AgCs8VZuXSe7mlPBaRmz1zzUG3jlhQBLZEjUYSP74row3YGufs2ghuPNmZvl+6FXOTVybU4fJYRByxGBxjFAFN5fNvp5hyOcfyFIOID7sB+VRxDETn3A/rT+kSe5J/lQBtQfJ4YtP9u7kf8ABUAqO4Pl6LCe5VamkG3w1pnvFcS/+PY/pTLtN1hBGPRP5UAUTL+59yK9B+FvwM+Jvxfa4l8FeHxPY2zeXPqF3MtvbI+M7N7febkfKoJGRnFcC1uVTO7aFGcV+mXwZ06Pwt+zv4O0y0Bt3GmRXUoQ7cyzDzWJ98v+gpN2GkfMcX7DPxtx+8m8JRn0bVGP8ozTJv2HfjUDhbnwi301Nx/OKv0G0DV5rjwvC80pkl3urO3JIB4q4bx+u6p5h8p+cg/ZO+NnhHTrq4n8NW+rQkhz/Y96ly4AHP7vhz+ANeFeIbSSPxhd28sbxyxyCJ0dSrIQACCDyCD2Nfsd9vdepz9a+If25vCenW3iPwv8QrC0ihu9RabT9ReMY8541V4pG9W2l1J6kKvpTTE0af7G/jUzaHrfw6vJ8vat/adgGP8AyzchZkH0fY3/AAM19A/F3wOPiz+zzrvhIKH1LyfPsGPVbuH54uf9rBQ+zmvzi+FHxCk8AfGTRPFBZhbW9wIrtQfv28nySj/vkk/VRX6j+H7sHUgscoaOUAo6ngnqrD6/1qZaMa2PyT0N3E00DqyOfm2twQRwQfcVuGaCP5JZkQnghmr0v9qP4fH4dftJ6pNp8PkabrQ/tmy2jCr5pImQf7sofj0Za8TVQ77jyOtaEkJVtu3cCFOAuf1FId0ZAZWXPIyMVbEYLZp3lcYoAqq/PWrdrG88hAwAq7mLHHH9aT7Pk5PP1pGXY6gkkAcZ7UAdDeIJtGlK8/JuH4c1gLxjB7c/Wr1pfCGJopGLxkYC45H4+lU9iAYEw/FTSAs20mDirFneS2GoRXURIkgkEi/VTuFUYsK4PmqfwNWVQST7ldeccZoA+lbS5S6gjuImBjlRZFI9GAI/nWnE5CgjOPWvF7LxzqFl4W07R9MtlN5FH5JndfNLYJ2hEHU7cdfyq7b+FfGGukXOs6k9tu5C3UjO+P8AcUhV+lAj220uSrDOQPWup0y8IK818/ReFfFPh2FtQ0PXWuGjG5oEBUsB1wpJVvoRXpHw/wDGcXiXS3EyJFfW+PNROFdT0dQegODx2P4UDPXysWo2HlsQJF5Rz2PofY1h69LrWp+HJdEls5JFYbGJh3sQOgz0/GpdOvQCBurqLWQSxAigD5K8XeHr/Q9UMF9avBIVDgMPvKejD+X1FcrFdXthqVtqOm3ctlf2ky3FrdQnDwyqcq4+h7d+QetfUnxY8L/254Ta9to997YgyooHLx/xp+Q3D3HvXzDc25WXI5U8g+tAH054O8X2PjrwjHrtvDDaXkbi31Owj4W1ucZyg/55SAF09PmTqlbeM/dOR7V8y+BfGWpfDvxxbeKNMiFyEHk3ti5AS9tyQWjOeAwIDI38LAHpnP3p4YufA/xD8I2+u2djZ3VvcRrNFdQx+S7ocjJ242upDIy9mU9sUN2HueRlTim49K6LxZpFlo+tiHT7h5rWVPMj8z7yc4Kk98Edfeufx7UxCUU7AFJQA2g0tJQAmaWk5pfpQAo9aUdM0CigBe1BzigCjFAB2pKXoKMUAXvFH/I7av8A9fs3/oZrJHWtjxRz401f/r9m/wDQzWP0oAUDFGKAM0EYXrQB89/tQ+JFi0zSPC0D/M+bycA+uVTP4Bj+Nez/ALPlnb/Db9jyLxPqFlM5uUn166ihx5jRkhVIz1xFGr49M1keNf2Wh4/8eHxBrnja8tY3SJDYW2nKWiRUAKeY0mM9edvU9DX0AnhyxfwmPDQ02M6T9jGn/Y35Q2/l+X5Z9tnFTJpjSOC/4XL4fvtN1m60m1kmNhfLaWguLgQrqMblwlzEVR38thFKwwjMQmQMHIgf4meLV8G2fiGD4c5S6ne2itptZEUs0gkEcSxK0AZzJ8zKCqkKpJwK7C7+FHgrVNS+36n4O0y6ufLhiEjo4KpChjiVdrDaFQlcDHBIOa3LfwfpdlbWENhotjbR6crpZJFCALYP98R/3d3fHJqLFXPDf2rfEUtl+ztHokZWO517VbWwZQ+QFXMzjd3G5EGe+a+B9Vjlh8RX1tKQXhmaEkdMqdvH5V+lfxm+Cdz8WPA1ro8GqDSb+xvVvbO7eMyIrYKsrKOcEEcjkFR715E/7Fvia9u2u9R8SeC7i5kO6SZtMvA0jd2IWQDJ9hVRdkSz4n2H3qaAFVduewr7cT9iTWCABr/grP8A2Cbs/wA5agT9iTV5HeRvFHhJEJwoGjXOMD+IDzh196q4WPiG/JbUpcfwkJ+QA/pU+iqf7ZjY5+RWf8lNfcCfsP3zLk+MPCm49SfD05/Uz1NB+w9fRurf8Jt4ajwckx+HZckdwf3/AENF0Fj4LAO0GjBzX38P2Ipv+hz8MD6eFCf53FP/AOGI2xz418P/APAfCY/rPRdBY/P4g+lIQeuK/QL/AIYlbHHjbQ//AAko/wD49TG/Ymn5C+N9C/HwjH/8eougsfAigi2Hu5/kKe/3IR/s5/U196j9ii7iQufG3h/agLE/8IlH/wDHqbF+xPeLbJv8caKpPzMG8JRuyknOMmbtnGO1FwsfE12Cui6cvP8AyD3f85GqWZfkiGP7v8q+03/YqvGwD8QNJIA2gHwnHwPT/XdKVf2LtQB5+IGjn/uU4/8A49RdCsfFVxDmzkwOdh/lX6TaXrWjw+H7CwguJttrZwQkm2lC/LEq8HbgjjqK8zH7GGo9/H2kMPQ+FEx+k1YerfsR+J45fO0jxtp92WGWEtvNY4bPRQnmDGPpUuzGtD6l8K6lazaCiRu7DcWDGN1BB+orXlv4UH36+I3/AGP/AIvWzKLbxDpo2sDxqk4BHpgx1y/xO+EXxT+GPg2PxLrV/ZNbS3aWapZ6pKz73VmBwVAxhDSsO59+Jqdq86rLc+Uh6tsLY/AV8zfts3FpP8HvD3lzLIya4CvUEg28oJwfwr48t9V8WXV+Em8RXWnxYJ837RNLg+mFOas3C3M1q51XxHbazsYMhu1uH8s4xgBvWmo2Bs45wgxkZy36V+jn7NvjZvFfwC0W5lm8zUNI/wCJXcnOSTFjy2P1jKfiDXwDZWN3qWsWumWGlaRPdXcyW8EQG3e7EKoy2AMkjqa+xv2a/h7418Ay+IoPGGhppMV6sD20dreqyyMhcOSI3IBAZetEhI7j9svwevjH9neDxnYwb7/w1OLlioyxtZSI5h9Fby39grV+eKLIkgYlwpPzbRk4+nrX63W1vZ6l4dutHvbT7XY3MTQXFrNIzxzRuMMrKTyCCQRXMxfAX4K44+E/hnPvbMf/AGahSBo/Lpr2NXKpDev6ZVF4/M0n9pqo/wCPS6z/ALUqj+lfqTP8Afg1MiwyfCvwysZ+f5LPacjjqDmli+AXwciAWH4baDGR3W0jb/0JTRzBY/LN9WPlNi2dTjgmdeP0qs/iO9DDZDZIBjjyQ36nJr9Yk+CHwzUYh8IaZD7Lp9sf/adW4vg74NhAFrptlbjsF0y2H8lFPmCx+R41+d5C00MbE9BEBHj8hUy6n5h/49LrP+yA39BX64/8Kp0+Pm3ntUH/AF4ov8qcnw6lhP7q7tv+/TL/ACpc3kFj8mYTcSJlLK/Y9gLZjn8q1bCw1u+vYbTTtKu7m6lYKlutrNvYnoBha/VYeDtQiHy3ETH2kYf0py6Frlu37udh/uzj+uKOYLH5v2fw5+OFjN51p8M/E9vMBgSwwFGA/EGp28HftGiRWh8JeNkOc8wLJn9K/R6PTNTRgZYi/wBYlf8AkaneFY1Jm0yMgdzaN/Si4WPzlfw/+02yQiDwV4rjZOrLYKok92GOT+IqPSPBn7SGi3739h8OdehndSjulko3AnJBByOo9K/RpGsnAJ0Qkeqwlf61J5Fg/J0e5X3TNPmCx8JaReftJ2VyjX3w58QTJnkNpKv/AOglTXbw+M/jrYRrNJ8KbuS243K2j3iTfgNxQ/8AfQr6+i0uxlGY2v7c/wC0o/qKfLoBnTamrT/RmZf/AEECi4WPjuX4zeM/KP2z4Y6zayqcbLvSrqJT/wACBb9a8l1ibVb3Vrq6j8Kz6fBNIZEt1SUrFnkgFlBxnPWv0Om8DSznLXLSj0+0uP5mqU3ga3gG6a0uDjv57Y/Q0XYWPziuJrmJSstjMv1B/wAK9T/Z2+MMXw98WTeG/EV6bfw3q7/6+Y4XT7k4AlPpG2AH9MK3Y5+wD4Z09Omlxt7uzN/M1JDpdpbAhNKslB4ObZDn8xSuFjkPFcbGS1Z+GAdTznuK5zYBXqlzp1regfarSKXHTco47cenQflWfJ4Y0l/+XJV/3GZf600waPOioppWu9fwdpr/AHGuo/o4P8xUJ8CQOMR6uYj6Twcfmpp3CxwxFAHau0l+G2uqu6Ca0nU9CGZc/pWdP4F8UwHP9kvKB3hdW/TOaLiObxSYxVq7sbywuPIvbWa2lxnZMhUn8+tVqYB2pc8Ug68UooAUdKXHFIBx1pRigBAKMCnY5pcUAW/Ev/I56t/1+Tf+hmsrFaviU/8AFZ6t/wBfk3/oZrLxQAmeMit7wVBpt54rY6hdwKLONbjyHb5mLMQhI/u5VufUVgke1Hg47viN4lftFZafD+ZuJD/6EKmTsi4xvc9yS60gtn7ZCSeetWUvdKUcXUdcAVjlI3vLhR0SRkz9cEZp6RxJ80ZmBHIJnc/oTg1ncLHoiahpHe7j/I1MupaQD/x9x/kf8K8/Sb0NWEm4607hY7wanpA6XSf98n/CpP7W0kD/AI+0/wC+T/hXB+f70vnUXCx20utaSQI/tiAHJbCt09OnelXWNIJ4u0/75b/CuGDM9zkdlA/M/wD1qzl8a+E95tptbSCdsjYA6vwcHBKdfpRcLHqI1TTMcXK/98N/hR/ammdrgf8AfLf4V5jYeIvBtlcmWTxTcRpJwftd8An1/eKOfpWvaalb31jHeWtwlxby5aGaM5WRNxCsPYgA/jRcDuf7V03/AJ+B/wB8n/CgatpnX7SP++T/AIVxnnD1pPP96LhY7Uatpf8Az8r/AN8n/CnDVdKJ5uV/75P+FcQJ+OtH2jHejmA7GbVtKaVYzdAKPnb5W554HT2J/AU4avpZ6Xa/98n/AArhTKDdO7NwEX+bGs5PGHhSYNDH4ghEw4IWeEFT/uls/mKOYLHpLalp3a5X/vk/4VH/AGlp/wDz8L+R/wAK8+02+0v7WkreNZpUzzHLNbFSP6fnWsby0nuZ1tLqK5ijcKJonDq2VDdQSMjODRcDrxqlh/z8p+tKdTsP+fqMfnXHGYVE9xgdaLhY7B9S0zveQ/nXOeNdE8CeOvBd34Y8Vpa32m3G1mjMxjZHU5V0ccqwPQj36gkViz3Bx15rKupWZSAaXMFjwrxJ+yh8PIzNJoXxI1SzAUmOG6SG6AOOBuGxsV896f8AA34p6lqQsYdDgiV2+aee8jES+5IJOPoK+35NOWaUlhmr2n6TDA25UAJp87Cx5T8Iv2Y/C3g/WbHxL4o1E+I9atXWaCDb5VlbyjlWCn5pGU8gsQM87a+kLX7F9qlmltojgmFcKOin5j+LZ/IVh2cKLcRLgcuB+tfEWp/tUfFGx8Z6pp1pf6SNOt724hgSTTI3IRZWCgtkEnGOTQlcWx+itpNp0aZhkgiz1UkKavR3URPy3ER+jrXxd8E/jx4j8f8AxMi8Ka/DZTpc2k86y29qLcwtEofs53AjIxgYOK+ifLVegX8qHoNanqAlZiCJFYYx1Bp480nhAf8AgNeWEjHAFAkPYkfQ0uYLHqv77/nl/wCOUoaQdYx/3zXlizzL92eUfRyP61KuoXy/dvbkfSZv8afMFj1ASt3UflSGb/ZFeaLq+pr93Ubof9tT/jUy67q4/wCYlcfi2aOYLHoLSA84qNipHvXDLr+rj/l+c/7yqf6VIPEOq97hG+sa0XCx2BUZpVyDxx9K5NfEeoD73kt/wDFXrTXLiZgphRmPZc5ouFjovJjmXEiA+/f86ha0ht/mmGYf+eoOCn+9jjH+127+tFvdTlctYzD6A/4VchuYpGw2VPcOKpCIW0+Edd//AH1SC0iB+UuP+BVn3Hibw3oWsSaJq2vaXYMIUurZLy8jhJiYlSBvYZCspx7MB2qBviB4EHTxl4cP01e2/wDjlMDcjiKcrI/4mrAc4x61yj/EXwSpwPFnh8/9xa2/+LpY/iD4RcjZ4l0Js9Marbn/ANnpAdG1pCx5gjIPqopPsNt/z7xf98ivOvih8YdK8F/B3WvEui6not1qNvGkdqhvoZlWSR1QOyq+Sq7ixHfGK+OLj9qn4otI2fiu6c9IrazUfkITTSFc/QpbOyAw9vCT/u077HYf8+kH/fNfnBN+1H8S2jkZ/jBqgYAFFhtbZtxyMg/uOBjNKP2ofG+7958Y/Ew/7dLcf+0aLBc/R37Bpx62cP5Uf2bph/5c4v8AP41+d0X7UfigD5/jL4p/8B7f/wCM1N/w1R4iVefjF4rP0trY/wDtGiwXP0OisrO3O63iEX+6xwfwzU+U9q/Of/hq3xJ2+L/ik/WxtT/7SqWP9q3xEynPxd8TqfX+zLRv/aNFgufoLqmlaZrNl9l1KzhuYwcqHXJQ+oPUVx1x8N/Ddw7ottPayLwfJmOPYgNnivh+L9rb4ix4H/C0tQfHd9Htjn/yFXqHwX/a6vtZ+JWn+E/HOrw6xBq0q2ltfLYpZy2szfd3kYV4yeDkAqSDyMiiwHuGpfCy4ijaTStRExHIiuFCk/Rhx+YFcJc2dxZXclrdwvDNGcPG4wVNe5yeLdCxn+0bD/wPg/8Ai643xpf+Gdb07zbe/wBO/tGAfuvLvIXeRc8pgNk+o9Me9CYHnGOKXFKeuBRjnmqEKPpSgUCnUAT+JP8AkctW/wCvyb/0M1mDk1qeJP8AkcdW/wCvyb/0M1mL1oAcFyKr+CT/AMVd4vm/6e7SH/vm0Q/+z1dRRiqnhBdup+K5MYLazt/75tLcVEzWn8Mv66o7cSe9O3nBrP8APKYIR3yP4MHHt1rR0u1uNWuNiKbeGPDSzS4wPQYByfp7dqzEKJgnLEKPU1chjvZk3QadfSjsRCQD/wB9YroLZ9F0YBreze4nAwbiZgD+A/h/Cpv+EtiDf8eUZ+rmnYVzDXT9YIyNHvfx2f8AxVPXTtZzg6Ne/gEP/s1dJb+LUJ/48Iv++jWhH4rtXlMc1ntQBc+W3UnPX2xiiyC5xTefah5Lyzu7ZMgb5oWVeP8AaGV/WsifSdHn1ddTmsYnuFBxIvyscjGcjr1r1dr9LmIPbODGRgbf5YrjNd0RLOQXlrGEt5W2vGowsbnoR6BuhHQHHrQ0NHC3/hPRdVjSC/heaBW3CM45P1x/KujgeK3t44II1iiiQRpGgwqqBgAD0AqGRSlQGXBqQNL7SfWj7ST3rN873pPOOeDTuBpfaPQ0ouOetZnm+9Hne9FwNNZ/30hB/u1yepeAvDOo+Kx4he22XnmGVzsVgxIweDW0s37yTnuv8qd5tAHOXngPSb2NoHaNY2PJS2RWx7Guo0aw0/QtFh0rSrdLe1hztRe5JyWJ7knqai82lE3HB5pAaLTk96iabPeqfne9NMlFwJnkzVdsE00vxSA0ASRoMjircYCiqyEVKHoAvW7g3UOP76/zr8p7rM+sXdwckyXEr5+rk/1r9Topdkm7OMAn9K/Mi0i0i6SJri8trQuRveS2dsZPLfKTkDrWkCZHrv7JqBv2hhJ/zx0e8b89i/8As1fcBcN0NfGf7M1pp1n+0Vr9vpGo22p2lrosiRahbQvClwGmg+YI/wAw7jn0r7CsoprmQgOI0X78rDIX8O59qU2OJLI+2RYxueR/uxRoXdvooBP49Kni0zXZlzFodwB28+aOL9Mk10em3umaZbGKyscs3MksrZeQ+rHv9Og7VafxE6/ctbcD8f8AGlYLnNLoPiQ/8wq2H1vR/wDEU8eHvEv/AEC7Y/S+H/xFb3/CVSr/AMu1ufwP+NSp4sY/esoT9GIosguc02heI15Oi7v9y8iP88VC+n67EMyeH9Rx6x+VJ/6C+a7RPE0LD57I/wDAX/xFWodYsLk7VDI57P8A40WQXPN3vIreQJdrNZseMXcLwZ/FgB+tWQTXojqJEZGUFG4KkZB+ork9a8Ox6fC+oaVGIrZfmuLVPuoO8kY/hx/Eo4xkgAg5LBcyM56V4n+1P4j1/wAN/Ai3l0PUJ7I3mrw2tzJBIY3aIxyPsDKQQCUGcele1jg88V5f+0N4H1f4gfAHUdK8PQ/adUsbmLVYbVfv3KxK4kjT1fa5YDvtwOSKI7g9j5D8C+Jr7VdRntZfE+taTcpD5sD2tzcTGZwwBU4kXbwc5z2xX1z+y38Sdf8AFGn+I9A1vXL7Vo9JvoUtbm/bdcCGQupVmJJ4MeQCTjJGa+EvA6XFt41tpLgpHBKjwiXzBt3FeFJzwcjGDjmvqX9kET2njrx/YzBlkjW1kZT1BE0v/wAVWSqy9tKm9rJr7zpdGH1aNVP3rtP7k0cUNX+GHxA+MPjd/jD4kuNG1WXV7sQanLb/AGi3jjikEcUG0AsoCqcY4496zfEHw6+F+g2djJeeM7SKbUbRL6zhOlvl4XOEZsZ2bsE4PPtXlXxNs2tPjp40tuRs12+X853P9a7WfU3TxDpV3cW5vYX8H2ahODJGgi8tmiJ+66kMQR6GupHHcwRo/gAS/v8AxLo555VLeYZ/Hyzj8q6O98FfDn/hCI/Feha61zZJdCyvITbgyWkzKXTPyjcjBWwwA5UggV49cSSNDdSD/Vo0e1s5+YnGM+u3k+9ejeBWa6+C3j6MklEttPnPPAkW82D8dsjUxXPpP4E/8K/+LPw7174c+IdI0i8l0+OFLXWl0yG1u44pcop8xVBLxuoIbuDg5ryrQv2YPif4o0a31rSvEHhL7JctKsaz71kBjleIhlEJAOYz0Jq1+y3cvaeLvFJVipOmwMOe63A/xr1DSPElzafCzUtMgkSSS31bUGhgklZFfF7I4QlTkAkkHHrSKPPIP2RPiwLmNpdW8GXEQcb4wWywyMgE2/BxVrXf2SfiJNBG+iv4X0oIWMpednDDtyLcYxVyK58d3lnfWd14gEd/eb7aXXhrFy0S20jhmENlgeXIqgIrbhgZI5Oais4fGiahpWo6x4xsrq5s7y1STyLq6RpLS34DAhtu+Qf6xWQ5wPmzQK5ybfsnfFxTz4q8ID/t4k/+MUw/so/FY/e8X+EB/wBvL/8AxmveG8ZO65N9Hn6mqUvjBxkDUE/M07AeHv8Asq/FBB83jLwj/wCBT/8AxmiT9mDx6sUIj8Y+D4pFB813u5GDnPBA8njivZJPFLvnN8h/4EaoT+IyQf8ATQPx/wDrUgPNZf2cfFh0q3gTxd4Jhuoy3m3CzTN5oPT5TFhSP9nGapw/s9+MtPvY7t/H/gxzEwcI6SSKSCDyphwRx0Nd/c+J5VyBf4+i5/pWRceIZ3z/AKbI3HZMUWC5seL/AA14JvdM0bxMnh/R7G+vRLY6la6XAq2ZvYHVWkhVgNiyLIjbexrlLNdG0G9h8Q6TpWnvc2N20KlYQpimQchvUEbsEHnFaurTXlz8H7GO1Mr3TeI5/JEfLljBCePfcFrFhsp4fCOtR3cRhuF1CAyRMclHaOYsDyeck0DR9FWM/wBr0y2u8BfOhSXaDnG5QcfrVgVleF3MngnSHPU2cX/oIrV70ou6TKqK0mkOFLnHSk6UmTVEFvxIM+MtW/6/Jv8A0M1mAYNa3iMf8Vhqp/6fJf8A0M1l44oAkQgYrSs4rW3hf7PbRQmd/PmKDBkkKgF29SQqj8BWWvFaEMg2qM9hUTKRYKu0iogyWOAK5X4l/G7QPhRa2+jIgvtXkTzFtQSAgP8Ay0kxzz2XqQOoFdLqOuaf4Y8L6r4p1Qj7Jpdq1wy5++2MKg9ySB+NfnH438V6t4j8X3+uajOZNQvZjNNJn7meiL6ADAHsKUVcLn0Pf/tUeLLyVmine1U9EtrKAAfjIXP61kN+0f4zZt39t6svsLe0/wDjdfMpubgnJnkP/AjT1uZQMmR/++jV2JufUVr+0t4siIL+IdRH/XTTbSQfoBXT6L+1J4hNxI8p0bWIgyh4JbdrKcgAZKsrMoPXqpH0r42N3cDlZ5B/wKprbUZo5B5rkjOQ4+8p9QaLDufqh8LfijovjLTF1fSJ5BBvEN3aTYEtpJjO1wDj3DDhhyPb2mW0gvdPktpxuimQq2PQ9x7jqPpX5Y/Bv4h3Xgzxvb635jPZOFttUgT/AJawE53gf3l++v8AwId6/S/wVr0WqaIsKzJMYlVkkU5EkTDKMD3GCP0qLWdh7nKX9rNbzy21zjz4XMchHQkdx7EYP41iyna9egeMbILJBqcY4ceRN9eSh/8AQl/75rg7pSGJFQ0UV/MNJvqMk0maQEu+lEnNRZNGTQBIr/vZOf7v8qd5lQA4lfHov8qdkmgCbzfWjzKhyaXtQBMJKN5zUPSnA4oAk3c05TUeaUE0ATqwp4eqwbinB+aAJpHZY3YHojfyNflxZXsjwN5kUWyIAbtvJr9RCQY35/hP8jX5dSOhsEgjsVEmMBo2YFznuO5PStIEyPqL9j7w/d32t+JfFXlbIPJi0qH0dywlf/vkKmf94V9EfEf4k+GvhdoEcuqTefdOD9nskcK0zd2J52rnvgnsAa5j4eWmmfA79m+K615li/s61a4vSuMyXL/NIo9TuKxD/cr4i+IfxF1fxn4xvPEGrSeZeXLZSLOUto/4UA9AP6nvRbmYXse8al+1l4kuLpvsUsGnw/wx2mmpKQPd53JJ99o+lZw/ae8YS8HxFq4HtZWQ/wDadfLUuoXsj5a4f6KcfypBeXaDP2mXPpuNXZE3Pqpf2lfFucnxLqo/3tOsm/8AZBVqH9qPxTCRu8Qq/wD18aFA3/oDCvk4apfAf8fMn50f2pfd5yfqAaLIdz7Ltf2sfEKQhg3hrUXH/LGWzntGb8RKQPyr0/4c/tIeGPG+qw6HqdnJ4c1qVgkMU8wlt7luyxy4GHPZXAz2JPFfnXHrFwD+8RHH5Gun0LVbeR1WVt0JIVgxwY//AK38qXKgufr54dv/ALZH9mnP7xRxnuK3DGF7Aj0PINfMPwB+K114i0EaTq92ZNd0lVPnOfmvLfOFkPq4Pyue/wArfxGvpqK6jvLKO6hOVcZ+h7ipGec6vZf2Tq8lkuRCAHgPrGeg/wCAkFfwHrVJHYOHRmUg5DA4INdn4q043ejm8jQma0zJx1aM/fH5AN/wGuNUbTzzUNFI8Z+JP7NPhH4h+LJ/FWk6lJ4W1y6O688m0W4tLx+8jRBlKOf4ipwTzjJJPWfBL4KWvwli1q8ufEI1rUtUjjhZ4bY28MUUZLAAMzMzEnkkjoABXfQyYlrTt2Bp8z2FY/OT42eH7iX9qT4hwWxCbNYmmUH+Mvh1A+oarej+EPE/irwhpcOirLb+K9HtngtbJJMSajaly+2Ig8yxl3BjPLKeMkEV9V/Fz9nnRviB4u/4TLTPEtx4Y1uVIoLyVbQXcF4FxGjPHuUq4G1dwJBAGRkZPMWv7JHie1kV4PjTpMRU5Df2DKCD/wB/K0UiWj5ek+D/AMZ9TnWO7+H3jCdi2B5mnS4BOBnpgfWvStV8PSeEfhBD8No4LSXxJqVxDda7PalDHYQQ5MNq7odrTFmLuATjABOa9un/AGbPiHPZm2n/AGhIZYSNpjk027KkehBmxj8KyIf2TdajnQXHxotEgB+ZbDQnV8d9u6QAGhsEjivgp4b/ALF1vxJqjBo7ZbG3tZZW+6JGkMpyfaOPcfYj1r541b4j+Mp/Eep3Oh65NbadcX1xcQQ7U+VXlZx1U+uetfpT4Z+EPws0PwhHoVxpa6n8rC4udQMryXjMMO8oUhSWGARjAAA6CoP+FAfs+Fst8NvDf4Wkv/xVJMbPzRXx/wDEZpFEvia6WPI3FTHwPptqxL4/8aKyGy8U3QxncZmRT7YBWv0mPwF/Z8Xp8NfDn42ch/8AZqYfgj8BI/ufDXw3+GnE/wAzT5hWPzaPxD+IWMf8JdIPrLH/AIUxPHvjkzqZ/F0hTPzASpnH5V+lA+DnwLQ/L8N/Dv8A4K1P8zUyfCj4ILwPht4b/wDBTFS5h2PzOl8d+NTO5h8XyJGT8oNwuQPyqF/HXjYjDeMJD/23H+Ffp+nwx+Cqfd+G/h4fTSYf61Zj+H3wfiOY/h3oK/TSbb/Ck5BY/Lmbxfr82lRRjxZeC93EySfaRsK9gABnPvVKPWvEhfe/iu8Y9dqXDEt7V+sEHhP4XQAeV4B0YfTTLYf+yVeW08CWYDQeDdNjI6FbK3H8kp8wrHxnfeFhZeCfCnge/wBfgttXWym1W4uLlyySXchT927LnYMfLuxgFR2qrc6XFo3hSDSGvYbubzGv9QuoHLxBwhSKBHP3yAWZiOMtjtX1N458AfDD4hWUMGteE2gngbdDf6bKtncR+o3IvzKfRga5nT/gH8F9M1CC9/4R7Xr+SFg6x32tSSRkggjcoAyOOnSncdjN0vRpPD/hzTNKk83dHZwuPO+9h4w/P/fWPwq0K6PxvfNqPiVLlo1j/wBHVQq9gC2K5zHFNbCe+oYzQBSgYopiLniMn/hL9VB/5+5f/QzWataPiY7fGerD/p8m/wDQzWdGxMioOSxAFAD9veuf8R+N/Dng8258SammmxXLFIZ51PlyMMZUEA8jIzn1ry7Xv2iLCLV7uw0e3aOGCV4RcPFvaTacFgCcAZBxx0ryjxv4x03x1c28+s6ncSPApWPzbbcEBIJ2gEYPHWk1cL2PS/2i/iRZzfCvQtH0PUYbu01iZ9Qlmt3DLLDCfLQZHUGQt+KV8kPM0zM7nLMcmt7xDHFFZpBbSgwRttTORuB54Hbkk4rnCQOBQlYL3DGTSqju22NGY+ijNauk6ULofabptluOg6Fv/rVvC6sLeMRW8C4HpxTA4421wPvROPqMU0xOOqnNdoklncgo6iPJ9qr3+jxGMPbAe4H9BQBV8K6sLDVI/Ob92p2vn+4Tz+R5/Ovvf9m/xvJFp66HeT730wKseTy1o5+X67GyPoVr88TC1tdB2U8HkHuO4r3L4VfENvDGuaNqEpLx28n2W7bP3rV8An6gbW+qVLVxo/Ty/ij1LS57JmGJkwr/AN1uqt+BANeWT7jnzEKOOGX+6w4I/A5rsfC+ri/8Px7pQ7xfuywOdwH3T+IIrnvEsKwa/LIv3LgCYD/a6N+oz/wKs2UjBcfNTakIJbOKjMkSNh5FB9DUjAA5p2KQSw44lT86cHjPSRD+IoAYB+9f6L/WnhaEKmZ/mX7q9/rUm30NDAaAaMCnY+tGOKAGkUAUvFKKADFLRTu1ADSKaeKfx3pMZoAhd2EUmP7jfyNfOngX9lyTQ/HWkeINa8U2OpWVlKt2LSK0dGldfmQMSSAobaT1zjHevo6RP3MhP90/yqhfavY+H/C91r+pPts9Oszcyn/ZVM4+p4H4007CaPnD9rfx6Bfaf8O7GfNvp8a3uoYP+smYfu0P0BLfVhXyPLIXkZ2OWY5JroPG3iTUPFPi2/1nUnLXV/cPdzZPQseF+gGB+Fcy2c1slYgPem9TSnsKvWWlXd5ho02of427/T1pgUKK6aPwwgH7yRyfwFJJ4eRAAq5PcseBQBzeamtrl7a4WVeR0I9R6VZubBoRuMWFPAbsaqNCfSgD2r4ZeN9R0LXLDXLBjJdabIC0ef8Aj4gYYZD/ALy5X6gGv0v+HuuW+saNbS2kxls72Fbm1k/vBhkD6kfqDX5E+EtS/s7U45JG+RTskHqhPX8DzXpereOPHnhG4s5vDfjTXbCwYZjtra/kSGOQHJAQNgBuD+JqXG47n6xLEV+/HkdwRwfavLNZtP7J1e409QSsLDy89TGwyh/Lj6qa+Vr34p+KG0yz16y8d69aWGoQJcQeZrEwCkqN6DL5O19y/hXlXjD4tfES+1yK40/4ja5OkcPlkTXkjAfMTwTyRzScbgpH3dFOQ/IP5Vs2UwYgV+bCfF74sQtlPGl+xHrO5/8AZq3dH+O/xjS6jiTxPO5JA/eSSY/Q1PIyuZH6L3oX+zHJ4wyH/wAiLUsz7ZG5HU18UN8W/jQ+lJv8RqEcBm+S6bgEHHNufTsayb748/F+N2zr6Ek9kmH87enysVz7la4A/ipqyqx618FR/Hz4vtOo/trcc/dUtk/+QqzIP2hvin9oaG7+JWp2cqsVdDZR7UOfu5KZ496XKw5j9D1AIzmuF+LHxd8NfB/wnZ6z4gtry9a9uDbW1pZlRJIQu5myxACqMZPqwr5Sh+KvxsuLZLiH4o6i0TjKPHawMGHsduDXmfxf8QePvGC6TH4m8T3uvGzEpjS4gji8neVyV2KM52jr6CqURXPoqf8Abm8DqSIvA3iA/wC9dQCqMn7c3hU4K+ANaIIyM30Qz/47XxX/AGTfMcrBIT9KedH1NwirZT/KMfcY9/pTsgufZjftyeG9vyfDrVCffU4x/wC06jT9t/TrhnW1+GV+5RC5zqycAf8AbKvj+Pw7q79NPuj9IWP9K0rTw3riQsF8PX8zN/F5EowMdOB+P4UcqC59Pt+3XbjIi+GEh/39ZH9IajH7dko+58L4P+Baux/lFXy/H4C8VyH934b1Zvpav/hVhPhr43kPyeFdX/8AAZ/8KOVBdn0u/wC3dqQj3RfDHTFGcZfU5W/kgqjL+3R4imfZH8PdBQHu13Of618/J8LPiDLGIl8K6mFzu+aEj+daFp8E/H07gPoE8ee8jqn8zRZBqfevwX+JV38WPhYPFdxo0WnTpfTWUkFszyR/IEYMC3PIf9K9BklSNMyzRx/77hf5mvhjw58D9bh8LLBqPjCXSZg7MLWK43x4OOSFkGCe9VLj4a2Gn6iLHVvEFzPKV3o8MwaOUDrgkZBHdWGeQRkc0uUdz7H12eG41ON4Zo5V8oDdGwYdT3HFZwHtXhPhLxhb+BtBi0iPU4302AHyoZwreWS2488HBJJ69+9eheE/il4X8Wawmi2twYtRdGdIiCVkCjLbTgcgAnBHarWhLdzs8ccUnWnkUzGaALfiVCfGerf9fk3/AKGazYo3+0xkD+Mfzrb8SKP+Ey1Yn/n8l/8AQzWch2urehBoA/PG6ZxqN0GGD58mf++zVcEkgGur8c6KdF+I2vaUyFfs+oTKoP8AdLllP4qwNcyU2yLx3FAGb4idfOijB6An+n9KzNOsje3wjziNfmdvQVHe3MtzeO8rZwSAPQZra0tVttKyfvzHJ+nYUAPuZGbCRrtiXCqqj9MVpXPh2+0zw5puvanLDb2OoGUQiM+dL+7cI25AQF+Y45OfaqM0v2aw+0r/AKx8iM/3V6FvqTkfQe9b2t30E/wJ8KWqzK0sEmpB0DcqDNCwyPfJ/WgCppuhXWs6Fq+r6RNDc2ukRxSXfnDyHVZHCLtBJDHcegOarWk00MhSTcADhlbgj2qTQNcs9O+D3irSRJm+1a8slCAdIIfNkcn/AIEYxj39qzdLvvtluYpmzPEuVY9XQdj6kdvbNAD9aswsQnhT5OrYPT8Kl8IalDFqkcV7EZrc5SSIPt3DqOe3cVcjaO5ga2cB9w+Ud8+1YFrHJY6yEdSjhtuG4wQcj9aAP0N/Zz8Y/wBu/Du3iDMHtHfT5EZ9zAx4MZJ75jZefavW9dRprKKc9Ynwfo3H8wtfIP7L3iWOw8f6joTSYj1G2S9gUnrLD94D3Mbn/vivtC8tBdaXNHGc+ZEduPXGR+oFYyVmWmcqsQ2ZrD1FSkm7FdCM+QHxwwBH41iangqfWpGZQkHc0/etZrz7HK5oW4OetAF8uPtHHdP5H/69O3kdzVDz/wB7Gc/3l/QH+lSedk9aALnmMOjsPxpRPKBxK4/4FVTzR3pfMoAui6n7TP8AnTheXAH+ub9Ko+YMdaBJ70AaAvrj/noD9VFSLqFwOpQ/VazPM96cJeaBmzBqCyOI5VCsehHQ1bHFc4XBFbFldfaLcBj868H396ALUnzRN/un+VeC/tP+K/7H+EOn+GYZds2szK0wB5+zxKGb8C5Qfga94cny2A/un+VfE37VWsS3fxPt9P3HZp+lW0AHo0gMrfoy/lVQWpLPApZTNM8zHljmocAcmnE4j9Kt6VZfbb4B/wDVp8z+/tWxBe0nSkkAvLzAi6qh7+59q15NSRF2W4Cj1qlfXJP7tDiNfyqz4V0ZfEXjXRtDu75rCLUbuO281Y/MkVXYDcFJA+mTzSAjN9MSMZNPjv5VbDZ/Gm6jLp+i63dac2mrcLBPJCss9xIGYK5XJCkAHjsK6zQfDmia78LPEvix7q602XR5LaOOGP8A0iOcyttIIYhlx14P4UAYCrDd8kANjvzWZf6V5P7yIZB6gVbaKS3ZZI3VkYZSRDlXA7j+oPI71Yju1dcOM+q+tMDkvM+zzhx0HBHqO4rvbCVvEngSXT9266tseUSerKMr+a5FcXrFq0VxvVW8pvusWzn2zWn4O1F7HVgGYhHAjb27qfzyKAHafruq2UCRW17KkaghUPIUE5IGenOa1V8Xayq4aeOT/fiU/wBKz9eslt9clmhwIZyZVA/hJ+8Pz/nVFW+UKQOvXvQB2WmeLIPstxNqmkWV467UiiMKopY5yWI5wAOgxk16pb/Cf4mz2cN8nw68NwRSgMgm1C3hYj/da4BH414RblV0+VyekiH+dfXfjTUrLTPFWmX+o6BbahbT2K+UbhMITuyzb84yuVGDjqKLAec3vw++KkUBQeHfCtsP+xhtU/8AbquWuPh98Sd5M9r4X/8ACotP/kqrvxB1Pw/rFxDNpumWth5YKPFCyNv77sDOCBx161xc1lp/9pyRW6fu9wEe9VJ7dccUgOhi8C+OQ22SHwnjPSTxJZsPyNzisbxFpOoeGruOw8QaHo8TTwmaKS28i4SWM5Xck0TMDhge+QRVSW2t4YW2xguGAP7sDH9fzrH1OXdHawjAVFlYAdBlhn+VMCDwx4y1rRLK40+yuT5UjqwV2GxD0J56Z4/KtWTxxr65eS5tXwcYSXJ/ADFcTpyF2m47D+dXTER0FIDro/iz4k0yMRQNAVfn5lBIP1xTX+M3i5hgTxL9ARXM2kFjIX+2xK+3Gzdu/Hp+FW0t9D3jdbx7c84Rj/WgDRufix45iZRJemMsNwGWBx781V/4Wv41Y/8AIUbn/ab/ABqusoEarHDbgDI3GJSW5POSCakS4dA+UQkrhSiIu0+p+Xn6UwLFt8TvGdxK0b69Mi7SQfMK844HXvUGo/EDxeroieIrp8oC+JS2D6ZqLz7odJiPoAP6UnnXZ63MuP8AexQBSPjLxdI2f7YvSfYk1LJ4m8VLCJJtTvSpAyzAgD2yRVvz7nygonmBBznzDzUSyT+apklkZc8hmLD8jxQBmjxBq9xcJHLqU5VmAJz2qr9svGvWZrmaTY4GDIeRz6fSul+0oFxtH/fsCsi7WL7XvjQLu25wMZOTQBa0u5V9SiFzZiaLJLR+ayluOm7qK9e+CctvH8dtAa30y2tS7TRlkeRmIMD5GWY/yryDTFB1GIfX+Veu/Bdf+L6+H8dpZT+UElAH2Djim7R2pwPFHU0AXvEhP/CYar/19y/+hmsg7u1bHiPnxfqh7fa5f/QzWaFzQB4r8Y/hLdeLLv8A4Sfw7Hv1NYhHc2o4NwFGFdPVwOCvcAY5GD81XWk3ljetb3sDwyI21g6kEEdQQeh9jzX6BLEByRXL+NPAnhrxnZuurWnl3e3al/AAsy+m7s4Ho34EUAfnbc2jLqMsK9RKV/XFdDZ6NqGreIbDQNHhaa9vJ0s7eNerOxCj/GpfGehSeGPjFqvh+W5S4+x3pj81AQHHBBwenXpVeK8minNzbTSQzIDskjYqyk8cEcjgmgDrPGvhcaesumPpVzpt3E5jSO4QxMNgChXDfeBC5Dju3Oc1wtjDv0u4hkUrIjFSG4IyOh/Fa1NV8Z+KL3QrTRdX1i71LT7eTzYIrmTzHhOMfJIcso/2c49qqG/lvoY42CzMxCrNjEjkYwrjufegCpFBs0u4ypGeBkY6itz4d+CLzxnr0dppty0dxHMjTAISI4P4pCfyAHckVTkEb6dHNfaq0m223JCFYvG/mbfJbP3Tgb88jBH0roNN8W65p2kX/hzw4Ps8uqsnnCzRUkdQvC7xzjGSRwM80gKF/plzoXiq/wBJnJ8yyuXhJ9QDwfxGD+NZPiaNIrtZ4MgOA/0NW3l229sSu2QR+XIP9pWI/liqusStcaVHuPCcY/WmBt+EvF+r+GdWsvE+iSRDUNOfzoRMu9GyCCrLkZUgsMZr6F8LftY/FC+0KGTyvDaPC3lsP7PZunTrJ6Yr5N0u7miYwIqkEEEsCePw/wA812/gx5BcTWMEJnaVRIqo6jBHB+8RSdh3PXrr9p74oxTz2obw8nlSNGMabnjPHV/QisC//aR+KU5Ob3Rl/wB3TE/xrzfxDDcW3iWZXt2QyIkhVnXg4wejY7VkuszD/VN+BU/1pWQXZ6Wv7QfxHWTdLPo8vs2nqP5EVoW37R3jRTibS9Cl/wC2MifyevHWSTPMUv8A3yTTQdp+YMv1BFHKguz3iH9pLWBsNz4W05yHB/dXMiZ4PHINa0H7TEJx9p8Fyj/rlqAP846+dDKnHzr19fanCZT/ABA/Q0cqC7PpyH9pPwy6j7R4c1mE99kkUn9RWhB+0R4ClIEsWt2/u9qrY/75c18qBz6GgOaXKg5mfX8Hx0+G0/XXp4P+u9nKv8ga0rf4t/Dq4x5fjHTVz/z1Lx/+hKK+L91KGOODRyIfMfc1t478HXZAtvFuhyE9hfRg/qRWtb6rYXQzbajZTj/plcI/8jXwCQGPIB+ooGxGBVFB9QMUvZhzH6GpvZchGI9QCauWNysM4JPB4Ir88bfV9Ts5RJZ6le27L0MNw6Efka7DRPjN8SdFdVh8TT3kQ/5ZaiouV/NvmH4GlyBzH3hNc7UYqeMH+VfBn7Rd0ZvjhrAPOPsq/gLSL/GvQLD9p/xjHDsv/DmhXYxglDNCT/48RXj/AMVPEA8XeMZvEpsRYm78vdbiTzApSFEOGwMg7M/jVRi09Qk0zgpCMACug04Cz0kEDEkvJ/Hp+n86wkjE1zHEP4mArcu5VQ/7KDOKskeI9yPcMhaOMgcjILnpn2HX64qfwnffZ/ip4fu2c/utTt3Zif8Apoua9b0Dwl4S1bwjFpfhrUYz40sId2pWUznZfFvnZQD/AHM7Ny9CvzDB3V5H4m0hLDVGutPjlgjUBpYH+V7Z84Kn2zjBoAf8Rbf7P8QNWUdE1K6Q/wDf1qtaV4kis/grqnhyF2+1ajqsM8gwdqwwxseT6l2Xj2NYV/P9s077Szs7M5dmc7mLE8knuck037NcW2nGCeIo5HmAZBypGQeKADS9Y8mZra5JNnK2WA5MZ6B19x6dxx9NK4jkt7kgkErjlTkMCMgj1BBBHsaydC0htVmkw+BHjgdee/0rs73wlr+neBrTX76zeOw+0GzhmfgyKQXU467c71Dd+3SkBjT2kd9pjhj8yjdGxySPYVzls7W98uT1O011mnT+Ww9UPTPasTxBam31J28sIrfMNo4pgW2klmXZKxbnjNKLdfU1BaS+fapJnnGD9RV1cnFAFzT7SOe3urYsFLoCrn+Fgcg/5963rfWLjVN8F2zpdQnbLC7E4PHI9QcDBrG0tSt0eeoq3d2LSXMd3bTGC6i4WQDII/usO4oA0WhIqB4sDGOK6y28GeKbywjuLW/8GXYdQwA1tYG/FZApB9q5+70fxjbu6v4Zifacbob6KQH6FXORQBmTXEjzku0sr7SznaxKqMZJJ7Vi6mzPeQjH/LFj/wCPVtNaeK9/PhaQgf8ATZD/ADJqXU/CuqW/ha38SX02nQGRpbb+zVu1kuowo3eY6L0Q8gHOcjpSA4rw9H50d2f7qA/+PCtP7PVXwim6DUjjpEv/AKGtbnlrmgChFaZJ+WnrZkuVKsMY5xwfxq+dR0nTE3aklyxk4j8jHBHXOfqKrnxJ4dJ/49r/AB7ED+tAESWvy4HYkfrThbZqJ9d0m3kkjZbqIiRsRuu4gZyMkdetEfijTFchFuCWBXiMcg/U0ATizJPSlFnz0q8HvcAp4f1Y5AI/cgf1pk9zeWdnLd3Gg38cMQ3O7lBtGcevvQBVNocdKhktiiM/pyajbxjYNEEXT3653bxn6fSq1/4kKxtDFZhJGUEOz7gAcHpjmmBOEUK+45OMDBxg8c//AFqzbxMTpjOMD/0Kq0eqancXUaNMAkjY+WNR/SpbbdLqs8ckrSFZAo3HOACaAL2kxNJrEEakZYkDLBR0PckAfjXuHwT01YPjfpf2homk8id40iuElKEQtktsJAGDjrnJrxu2tljuRI5YKAc7ACf1r6f/AGa9NsTo2u6ylkguFuIrSO4cAuE8ve6g9gSVzj0FAHuWzFGMU/k85ppHNAGlr9uT4q1I4/5epf8A0M1niBgeldVrVsreI79scm4kP/jxrP8As69MUAZPlHHSkaz3jpWv9mFHkYWgD88vjja/Zf2pPEkZ4BvI3/76hRv61j+CfDK+KtcutMbULWy2WjzrNdTrBHuVkAUu3AzuwM19afFD9nXw/wCMvEus+Ol1zVbPUmtGnNrFHHJFLLDBheT8yhtigjnvivjjTbGO8gUOFOSrgHkZ/wAmgCz4k8MxaVqzae2q2ty0RwJreeK4icezxsRUWmaTNcWZtba2ll372a6wVjQIu44yRkgA5xTde0QwaTZXVrbkF3MLADkt1A+vUVFa3l6unw6dHctcX1sxS3RWBWBHOXC+rEk59MmgDQ1q+0OO50h9F0qMTJb27XAuJfNS4kA+YOuehOD9AKzLCRtL13T9QeZJIGIZpozkLngg+mM/pRDZ77y4ltYHcW8xjKyy4Eakgb85GSOeKzdP1SXTL8HD5hkyjAAshB9DwenQ0gLzSEr95WHmHBUggj6ii5Cvp20kA7sj8q2/FHii58XSWepXNpp9s0VuIALG2W3R8McuVHG4knNYMzkW20E8elAGfaO1tqClGK7htyD+I/lW/p13dJ4ljv7eSPrudXkVOTwcbiAR3rnJD8xIPO7irC3bhVbaCpHOexoA7TXI7vUpobq00+aZlUq4jUNx1HIPPeueubXV0POi3yj1+zt/hWaLl5HCpBuZiAAo5J9BirLvqOmsDcwX1mCcAyK8f88UANAukP7y2njP+0jL/SnLdyKcB5AfQE1o2+vXoQbNTuh7F2/rT5fEF20TpLes+5fl3Y4569PwoAzHvZBgOz8EHDLj+dBvlJ5EZ/3o1P8ASrSXts5/eafp8rHqXhGf0qQnTWXc2iWf/AGdf60AUhcwnrFbn/gAH8qessJH+pX/AICzD+tSlNHPXS3X/cuWH8xSi20Rz/qL+P8A3Zlb+YoAi82DP3JB9JD/AFFLvh/vzj8VP9KebPRs4S71JPqiN/I04aXYOMprM6/79sf6GmBCWjz8s0g+qA/yNHyn/l4H4xn/ABpX0pAfk1y2P+/G6/0pg0q5Lfu9T05/rKV/mKAF5B/1sJ/76H9Keu/sYj9JP8RSrouq4+U2cg/2LhP8aemkayd2NPkfaNxMTK+B68GkBIhk2n92Tx2dT/Wqeuyh9Pg3K6EN/EpHanm2vhw1rIPqV/xqpqu46ZGHBBUqCM9OCKYFLTE36pGc52gt+lajJuvFJGQHBP0HP9KpaIoN8x/2D/Sup8P6Be+JPEkOjab5X2u4WQRiZwikiNmwSenCn8aAOU+03ltqi6hb3MsNyj+ak8bFXR+u4Ecg571cuNcvNe1Ga91S6ebUJ2LyzSncJ2PUtnua2vEPgrWtDuHtdTtZLS4I+WK4jaIt06EjDdexNcrBYSR30a3kEyxFtpIGMHoOfqRQC1NaSIXW2wsNNVHA3lYmZ2OFy3BPtmludOTT7NI2vrOcz28dyv2SXeE3fwP02uO47ZrUn0Wex+Io0DSbhzMkiLFKZASrbQxO5TjjnpUviXQYdE8TSWWoXsLyvHHepPbH9xdwSJ5gkTOCjEfwnvmku42rDPCF3o3hzWLLU9W0WTUFt0Z2jtrnyvOZsbUn3ZGwf7Iya2vEvxS8QeNc2d8yQ2EhwLW3XbChABTryWBA+YnpkAAVwN3dPcoGDERvltue+e/6V1uqSWtr4YXSLLG2KeO5Vs+sYB/Hd/OlJ2HGNzFik/fjH8QpuvRiWyhn3Df905OSf1oCFJgT61Yu8SaWV25IOclsfpVEmDpcxjlaBjweR9a34juTAwT1FcvIGjm3qcFcEVrWV6HAJ4oA37OQLJu7VdN0A3WsVpFPzKzIx6lT1/A1F502eJVb/eXH8jSA9H8P61pSQi31MuqZ++uDx+NdHIPhlNGGbU9QSQ9QIYnHb0IPr+VeLi6uB90Ifo+P5in/AGy4x/qXP0IP8jQB6T4nPgu2itT4Z1G9uWIb7QbuFYgOfl2jOenWvONZ10OGsLD5mf5GZe2eMD3rGvtQup3aCPcvOD60/S4BbzpcuAWU7lyO/rQBp+GYZ7WHUEuIJIWKIu2RSp+9noa1iRis+XWJWkZ5HeZ2+8zsST+dNXVAfvRAD1zQBm+KGP8Aoq+7n+VZdu29kQhiM/dQcn6V0M1xp93ta90zzypOwmdkwPoKfaXmk2colt9FhjdejfaJTj/x4UAc9qqK2qShQRghefUACqKZjnUnsa78+JYThYtJ0kH1+xRsfxLAmq+oas19YvaPBYorjB8m1jQj8QoNMD0ON1eKPgf6tf8A0EVkeKo8eC9SKrkmIAAD/bWslfF8w27bS3XAA+83YYpZvFl3NAY18qLdj5o87h9DmgDzuDS9SllXybG5fnqIWYfoKvajpmoQ36xyWN0pMalS0LLuGMZAI6ZBro5tXum+aW9uHz0HmMSf1psN/ds+4TyRjptRz+p70Ac5aWN1FdLPLbzqkQMmDG3zew4607RIpp72W6ZcLuyT6t6frXVmaWUYeeZieg3nJqQWsFvA9zdTKqgF3Zj+nv0oAqxgiJz2A5J7V9q/BTwhd+GPg5YRahA0F7fyPqE0TjDRhwAikdjsVSR23Vl/Cb4C6BounaX4r8RvHrGozQRXltalMW1rvUOhKnmSQAjk/KD0BIzXtxiySxJJPJJoAx/s3tTTbHritjyQe1J5ANAGjrTD/hIb7/r4k/8AQjWcSM1Prcn/ABUd/wD9fEn/AKEaz/NHc0AWN9LvFVDMB3ppuBjrQBoRvGjhnUMoPzKe47ivzc8WaTJ4P+LPiHwvhkFjfzQRZ7x7sxn8VKmv0SE2e9fJ/wC1b4ONp400nx7aRfuNQhFjeOo6TxD92T/vR8f9szQB578SPHFvd+AdLsfstq+o3n+mhkXabIHKlvl6s58zAPQc45FeUWUUtpb/ANpK+0gERlTyCeM+1dWtta3lqY5FUeaRlsfxcDn06DB9eO9J4n0uz0X4eeHovLP9o3ZubqYgnPkiQRwgjPHzJMfxpAVPCtpa6nbyWlyzsVZ5Qigkuwj+UHkYy2AD6mpbT4d+J/Enh278SaNpxu47R2S9RGUMhVPMaTBPK7QST2INWPArrP4M8YwpxLDZ296rDggR3KBsfg+fwqzYeIdW0zTtUWyvGhi1W0Npdpjh4iQcj0JIIB64L9jTA5u48uG1htkwQqgZHf1P5mqE8mflOPxqa4l3zM3pVCRs5AOc0ARMSdp+rVGC4wOcdcVK/Gcf7oqzpGn3Wua/Z6NYR77u8nS2hX1ZmCj8OaAPs/8AZc8CaBZ/CGw8W6p4f0641i8vZbq0vrm3WSaCJCI02Mw+X5kdgRzzX0BqNtZazYPY6vaW+oWsn34LyJZ42+quCK5LQ20rw/4a07QNOdfsmnW0dpCf7yooXcfc4JPua0/7bgA/1q/nQBzk3wU+ETXUVx/wrrQQ8TFgFjdVYn+8obaw9iK6iTQdAl8Nf8I4+h6adH8n7P8AYPsyCER/3AuOB9O/PWqr6/bjjzV/OmDX7f8A56L+dAHkGt/skfDrUNQe40nVtc0WJufs0TJcxof9kuNwHsSfrVbSf2RvA1nfxTap4n1/UoUOWtlWO2EnHQsu5h+Fe2f29akf6xfzoGuWn/PVfzoA8wn/AGVfhPcEeQ/iWzP/AEz1JX/9CjNZtz+yF4FkJ+yeL/E0Hs6wS4/8dWvYxrtmBk3CD/gVI3iKyUf8fMf/AH0KAPn++/Y5g8qV9J+I03mBSYkvdNXaW7BmSTIHuAfpXml5+zZ8Z7F3WDR9NvgpwGttSg+b3Acqfzr7HPiO0PS5Q/8AAhUba7av/wAt0/OgD4q8TfA34m+FvhxdeMNasNPjgtCpns4boTXEaMQPMIQFdoJAOGyM56ZrylL98/NGPzr9L/t2m3drLa3awXNtPG0U0MoDJIjDDKw7ggkEe9fE/wAavgtefD7Vptb8Pxy33hSd90U6/O9kSf8AVTfTor9GGO+RQB5lHqkKr80X5EU4atGv7yIPG3TIIHH51iO2fpTRt9M0AbiapayL87bW9xUVxJFcWcsUcqscblAPpzWQeaegC89+1AF3RpNt8R/sGuw8Pa1eaBrsWs6Y8a3duHMbSDIBaNlzjvjJP4Vx+mWt7d6gwtLWacxxPLKIoy5SMDLO2OijuTWnZMz+ZkkgLnj0HX9CaQHReI/iF438T6QbLXtenvrOFhMLZ1RYww4DbVA5xWBoc0GoazHaahPNbW7K5MlsuWyFJUYJ6FgB+NemS/Cpl+FCeJ4L2S7uydstpEm5djHAKnOSw+Ukdw/FeYyQS+Fb24sdRh8vVYzskhJz5J/usR3Hcdjx60DLVtbXfhzxHbHT760uryHyp42t23xiZgD5RJIBIztbtnIqnrV9rOr+IYH1hWu5rZVg8lnXHlx9IwEPCgZHFXhqFpc+HAl1axrNAu0P5YHnKTkZP94Hv3FJpkVoLq0htoo2ku4GjklbH7ouCvy88Y4yfemIzBBbXaFbF0ixIXWB3zsB/hz1OPWu68H2nhO/ig0vxbdXWnySyLH9tjnUxqpZQBIMEqAM/OM47jivPdb0ySxuonxxOpb6MDtYfmP1rV0OeF7+SUxqBFbhyCo6qPmP8vzpWBMkv2hj1W5ht23QpcSJG24NlQ5AOR14A571C0gMLKXI/E1F5eCCeven5Pk8YIz6kUwMqePLvjptFQIXhkyOmMkVozKNspzzgDGfb/69VpVA3+wAoAmjvkK4d9p96nWZX+46n6GseYDoD39aI426igDaMpHfFH2pUUszAAdTWO3ng/I7/TNIWO4CRicdmNAGhCqNM07g/OchT0/GpJLj5iFP1NVreK6uyEtree4PTbEjP/IVuW/gXxzdkC18FeI5s9PL02c5/wDHaAMrzgoyT+FN84Fsuw46Lmu6s/gf8XL0KYPhz4gG4cGW2MQ/EuRiqXi/4UfETwL4ei1zxV4Zm06xknFssrTRyYkKlgCEYlchW5PpQByT3QHAOT6CojMzdSfpVVrjBwQfyphnJ7HH1oAui42jjrThcnGaolsqCq5bPIHNa2n6JLqhj2SrbDOCGUk/X3oArG9x3p0d4zHCmt7xd4Q0Lw3q+iWlh4tGtrfQLPdNHZva/ZMyFfLPmH5mwCc4xyOtHxPsvAunfEm+034ez3dzolqFgS5uZxN9okA+d1IVfkzwOOcZ6GgDKW5gjXfLMM+g5Jp8WpwlQVMn+6q5P4mufUEtir0XyQ579hQBtRa0kZBitmcsOC7AD9KitV1HxJ4hsNODF5ruVLeONRwDI4QAD8aodGKr2AjH1Nezfsx+Ev8AhJfjzaao8W+x0KM6jIx6eYvywD6mQhvohoA+840itIUs4QBFbosCD/ZQBR+gFO3j1quOBj9aWgCcOKXcKr8+tLk+tAEOvTbfEuoc9LmT/wBCNY8l+F71q+IUB8Tajx/y8yf+hGsGaBG6igCOXVVB+9VVtbRTy4om0+GTrkfjWTd6EHB8ucqaAL8niSGMEmRR+Ncr43utG8Z+BtR8MapMqw3ceElHJglU5jlHurYPuMjvWZq/h69UMUvV/M1wmq2t5Z7me53Y9CaAPn2dNQ0DXLrSNUhVJ4HMUyZyp9we6kYIPcEVY1G4udVNvJNOtyILeO2iErFTHGn3VDDqBk9Rn1JrrvF1jb63tdgUvYhtjn9R12t6jrjuP0ry8zSRSMikgqxUgHjIpAdDpV9e6I969t9miF3ZyWUnmuZsI5BJVcAbuOM5HtWRc3y+WIIchB6nJY+pPc1RkuXdcbj+JquznJH60APeQdz/AFqAtls9ew96ieTBIGfemByePwpgTjB6HjtXqXwm0yHSNR/4Sy7QCZFZLJW7EjDSflkD6k+lcFpmnQjZdXn71OqxL0b6n09q6pfEE4woXAAwAOAB6UAe1yePLpeFm/Wq7+PdQP8Ay8ED615EusTOe9PGoSsepoA9VPjm+PW5P51GfG18Rxdv+BrzJbuZu9To8zfx0Aehnxlen/l8k/76ph8X3Z/5epD/AMCrhQ0uM76Qu/8AeoA7ZvFt0f8Als//AH0ahbxXddPNY/jXHGR8feNMMjepoA62TxReEcTMPxqq/inU1+5dSD/gZrmTM+OtQyTMO5oA6ZvHOvW6/u9QmXH+2ayL34r+MIAyW2sTYYFWVjlWB6gg8Eex4rnb+YmMjmucnJLnJpAQaiW1K/e7eG1t3c5YW8QjQn12jgfgBVZdPPZxU59aTecUARnTif8Alqv5U+LSx5is8ysAc7SODQXb1p6yN6mgD1/wf8X9V8L6DPoNj4f8NR6ddRNBdJBZ+U9wjKVIkcMS3BPU15tZIlnqhX+FW2j3Hb9KzkmcHgmpzKxw5PzcCmB7Ro/jp/CvwivPsmpGbXnmFhpdn1FsgXcbts8HCsEXP8QH92vn2/eeW/ke4Z3lZjvLnLFs8knuc966uG/aSz3uMhAFb/aUn+YJz+YrR8JeHrTXvi3otpd4aNrwfaUYZWUIC5H/AAILg0AcTd3Ei2UFsGblQzHPX0H4V1vhuSKfwoZVs9ps5FS8uQOdjOCir/tMdw+iVg+Jhbt4pvFt4FhhjldI4l4CjeeB/Kuh8HOsnw78ZWmCDDFZ34b/AK53AjI/ETH8qAN/wpFo3iTUJF1rThdfYb9dW+whiftFsCBcxDBBJChZAB1CNXoHxy+H3w30Dw5pXiTwvZjT7/UJgIYLKXNtPBs3NLsbJHWMAqQDu5FeG6Zql9pniC3vdOuHt7uCZWhlQ4KtkYP05/Kuk8VeIZtevvPaL7NaxKY7ayRy0VsucuIwfuqz7m2jgZAHAFIDk5XIb6moy/yqN2PzolP7zB7VXkZtpGevy9PWmApcMqA9Xbd+H+cVGyGTkfxP/Kmu+1nI/hUAfjSxlnuUhQ4JKxqT2LHGaAPsP9lzwzaaZ8ILnWdRsLOeXVr9pIjPAkmIYh5akbgcZbzP0r1jU/CHw71e9N9qvgfw3eXRAUzS2Ee4gcDOAM14ToXxMm0Xw/Y6LZWIS1soEt4lB7KMZ+p5J9ya10+LFyxG+zb8GoA9Lb4YfCe5kUyfDrw38vTZa7PzwRmt/SfBvgPSFA0rwZ4ds/eLToc/99FSf1ryqy+JxdhuspPwYVvW3xBWTH+jTD8RQB65DNDbxhLYRwKOiwqEH5DFP+1MT807n6sTXmsHjAzYxHKPrj/GtKHxBI4B2tQB2xmBHUVheMfC+m+OvAWq+EtXO211CAx+aBkwSA7o5QPVWAOO+CO9UF1uQj7pqRNacHO00AfnD4r8Lav4N8W3/hrXbcw6jYymKVeobuHU91YEMD3BBrFVijZB5r7r+Nnw1074n+F21SARWXiLTbdngvHHyzQqCxhkxzjqVOCQcjoePhoxqBkUADT+ZsKoI3XqynGfwratNcW0iAMqyH08kg/nurBIAptAF7UtRbUb43DptOAuNxPT69KqFqZmlx3oAljBZ8VbBKsO4Xt79hVaIhB3yehq3EN2MZHHHt6n60ACq7OETLtnau3ksx449fQe9foH8AfhrJ8N/hVHBqcAj1zVGW81Be8PGI4T7opOf9p29K8u/Zn+CultpOn/ABU194b2R2ZtJsgCUt2Rtpmkz1cH7oGQPvZJxj6iDc5OSaAJQppdtNDHFOzQAbeaNtKDzSZzQB//2Q==" alt="iCAR V27 REEV tampil perdana di GIIAS 2026" class="block w-full h-auto select-none" draggable="false" />
-            <div id="v27Badge" class="absolute left-4 top-4 rounded-full border border-amber/40 bg-ink/80 px-3 py-1.5 text-[11px] font-medium text-amber backdrop-blur-sm" style="animation: v27BadgePulse 2.6s ease-in-out infinite;">V27 &middot; Golden REEV</div>
+            <div id="v27Badge" class="absolute left-4 top-4 rounded-full border border-amber/40 bg-ink/80 px-3 py-1.5 text-[11px] font-medium text-amber backdrop-blur-sm" style="animation: v27BadgePulse 2.6s ease-in-out infinite;">V27 &middot; PRE-BOOK NOW</div>
             <div class="shine-sweep" aria-hidden="true"></div>
           </div>
-          <p class="mt-3 text-xs text-white/30">Unit iCAR V27 REEV pada peluncurannya di GIIAS 2026. Warna: <span id="v27ColorName" class="text-white/60">Moonstone White / Khaki White</span></p>
+          <p class="mt-3 text-xs text-white/30">Unit iCAR V27 REEV pada peluncurannya di GIIAS 2026. Warna: <span id="v27ColorName" class="text-white/60">Moonstone White</span></p>
           <div class="mt-3 flex flex-wrap gap-2.5" id="v27ColorButtons">
-            <button data-key="glacier_silver" data-name="Glacier Silver (Perak)" data-hex="#A1A2A4" class="v27-color-btn h-8 w-8 rounded-full border-2 border-white/20 hover:scale-105" style="background-color:#A1A2A4" aria-label="Glacier Silver"></button>
+            <button data-key="moonstone_white" data-name="Moonstone White (Putih)" data-hex="#E2DFDB" class="v27-color-btn h-8 w-8 rounded-full border-2 border-amber scale-110" style="background-color:#E2DFDB" aria-label="Moonstone White"></button>
             <button data-key="obsidian_black" data-name="Obsidian Black (Hitam)" data-hex="#0E0809" class="v27-color-btn h-8 w-8 rounded-full border-2 border-white/20 hover:scale-105" style="background-color:#0E0809" aria-label="Obsidian Black"></button>
-            <button data-key="moonstone_white" data-name="Moonstone White / Khaki White (Putih)" data-hex="#E2DFDB" class="v27-color-btn h-8 w-8 rounded-full border-2 border-amber scale-110" style="background-color:#E2DFDB" aria-label="Moonstone White / Khaki White"></button>
-            <button data-key="basalt_grey" data-name="Basalt Grey / Porcelain Gray (Abu-abu)" data-hex="#616467" class="v27-color-btn h-8 w-8 rounded-full border-2 border-white/20 hover:scale-105" style="background-color:#616467" aria-label="Basalt Grey / Porcelain Gray"></button>
             <button data-key="desert_bronze" data-name="Desert Bronze (Coklat)" data-hex="#765540" class="v27-color-btn h-8 w-8 rounded-full border-2 border-white/20 hover:scale-105" style="background-color:#765540" aria-label="Desert Bronze"></button>
-            <button data-key="deep_emerald_green" data-name="Deep Emerald Green (Hijau)" data-hex="#26342C" class="v27-color-btn h-8 w-8 rounded-full border-2 border-white/20 hover:scale-105" style="background-color:#26342C" aria-label="Deep Emerald Green"></button>
-            <button data-key="porcelain_blue" data-name="Porcelain Blue (Biru)" data-hex="#788FA7" class="v27-color-btn h-8 w-8 rounded-full border-2 border-white/20 hover:scale-105" style="background-color:#788FA7" aria-label="Porcelain Blue"></button>
           </div>
-          <p class="mt-2 text-[11px] text-white/25">*Pilihan warna berdasarkan pengenalan global iCAR V27 &mdash; ketersediaan warna resmi untuk pasar Indonesia menyusul, hubungi dealer untuk konfirmasi.</p>
+          <p class="mt-2 text-[11px] text-white/25">*Pilihan warna tersedia untuk IWD dan RWD. Ketersediaan mengikuti stok di masing-masing wilayah.</p>
         </div>
         <div>
-          <span class="rounded-full border border-amber/40 bg-amber/10 px-4 py-1.5 text-xs font-medium text-amber">Resmi Diperkenalkan di GIIAS 2026</span>
-          <h2 class="mt-5 font-display text-3xl font-normal leading-tight text-white md:text-4xl">iCAR V27 &mdash; SUV Boxy Bertenaga Golden REEV</h2>
-          <p class="mt-4 text-sm leading-relaxed text-white/60">Model kedua iCAR di Indonesia, resmi diperkenalkan di GIIAS 2026 (29 Juli 2026) sebagai pelengkap lini elektrifikasi setelah V23. Berbeda dari V23 yang murni BEV, V27 mengusung teknologi Golden Range Extended Electric Vehicle (REEV) &mdash; motor listrik dipadukan mesin bensin sebagai generator, sehingga jarak tempuhnya jauh lebih panjang tanpa mengorbankan karakter berkendara mobil listrik.</p>
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="rounded-full border border-amber/40 bg-amber/10 px-4 py-1.5 text-xs font-medium text-amber">PRE-BOOK NOW</span>
+            <span class="rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs text-white/60">iCAR V27</span>
+          </div>
+          <h2 class="mt-5 font-display text-3xl font-normal leading-tight text-white md:text-4xl">iCAR V27 &mdash; READY FOR YOUR NEXT ADVENTURE</h2>
+          <p class="mt-2 text-xs font-medium uppercase tracking-[0.22em] text-amber">PRE-BOOK NOW &middot; THE NEXT CHAPTER STARTS HERE</p>
+          <p class="mt-4 text-sm leading-relaxed text-white/60">Dirancang untuk perjalanan yang lebih berani, nyaman, dan percaya diri. Nikmati perpaduan performa turbo, teknologi pintar, ruang lega, dan fitur keselamatan modern dalam satu SUV elektrifikasi.</p>
+          <div class="mt-6 grid grid-cols-2 gap-3">
+            <div class="rounded-xl border border-white/10 bg-white/5 p-4"><p class="text-[11px] uppercase tracking-wider text-white/35">Turbo Power</p><p class="mt-1 text-sm text-white">1.5L Turbo</p></div>
+            <div class="rounded-xl border border-white/10 bg-white/5 p-4"><p class="text-[11px] uppercase tracking-wider text-white/35">Electric Power</p><p class="mt-1 text-sm text-white">34,31 kWh</p></div>
+            <div class="rounded-xl border border-white/10 bg-white/5 p-4"><p class="text-[11px] uppercase tracking-wider text-white/35">Spacious Cabin</p><p class="mt-1 text-sm text-white">5 Seaters</p></div>
+            <div class="rounded-xl border border-white/10 bg-white/5 p-4"><p class="text-[11px] uppercase tracking-wider text-white/35">Fuel Requirement</p><p class="mt-1 text-sm text-white">92 RON Gasoline</p></div>
+          </div>
+          <a href="#contact" class="mt-6 inline-flex items-center justify-center rounded-full bg-amber px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-amberDark">AMANKAN UNITMU SEKARANG</a>
         </div>
       </div>
 
       <div class="mt-14 grid grid-cols-2 gap-6 md:grid-cols-4">
-        <div>
-          <p class="font-display text-2xl text-white">445&ndash;455 PS</p>
-          <p class="mt-1 text-xs text-white/40">Tenaga gabungan &middot; torsi 505 Nm</p>
-        </div>
-        <div>
-          <p class="font-display text-2xl text-white">&plusmn;1.200 km</p>
-          <p class="mt-1 text-xs text-white/40">Jarak tempuh gabungan (CLTC), setara Jakarta&ndash;Bali</p>
-        </div>
-        <div>
-          <p class="font-display text-2xl text-white">200 km</p>
-          <p class="mt-1 text-xs text-white/40">Jarak tempuh listrik murni (CLTC)</p>
-        </div>
-        <div>
-          <p class="font-display text-2xl text-white">5,9 detik</p>
-          <p class="mt-1 text-xs text-white/40">Akselerasi 0&ndash;100 km/jam (klaim pabrikan)</p>
-        </div>
+        <div><p class="font-display text-2xl text-white">5.045 mm</p><p class="mt-1 text-xs text-white/40">Long &amp; Spacious</p></div>
+        <div><p class="font-display text-2xl text-white">224 mm</p><p class="mt-1 text-xs text-white/40">Ground clearance</p></div>
+        <div><p class="font-display text-2xl text-white">455 PS</p><p class="mt-1 text-xs text-white/40">Peak Power</p></div>
+        <div><p class="font-display text-2xl text-white">505 Nm</p><p class="mt-1 text-xs text-white/40">Peak Torque</p></div>
       </div>
 
-      <!-- V27 INTERACTIVE SPEC TABS -->
+      <!-- V27 FLYER SPECIFICATIONS -->
       <div class="mt-10">
         <div class="flex flex-wrap gap-2" id="v27Tabs">
-          <button data-tab="performa" class="v27-tab-btn rounded-full border-2 border-amber bg-amber/10 px-4 py-2 text-sm font-medium text-amber">Performa</button>
-          <button data-tab="dimensi" class="v27-tab-btn rounded-full border border-white/15 px-4 py-2 text-sm text-white/70 hover:border-white/35">Dimensi &amp; Baterai</button>
-          <button data-tab="fitur" class="v27-tab-btn rounded-full border border-white/15 px-4 py-2 text-sm text-white/70 hover:border-white/35">Fitur Unggulan</button>
+          <button data-tab="spesifikasi" class="v27-tab-btn rounded-full border-2 border-amber bg-amber/10 px-4 py-2 text-sm font-medium text-amber">Spesifikasi</button>
+          <button data-tab="dimensi" class="v27-tab-btn rounded-full border border-white/15 px-4 py-2 text-sm text-white/70 hover:border-white/35">Dimensi</button>
+          <button data-tab="fitur" class="v27-tab-btn rounded-full border border-white/15 px-4 py-2 text-sm text-white/70 hover:border-white/35">Interior &amp; Fitur</button>
         </div>
         <div class="mt-6 rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8">
-          <div class="v27-tab-panel" data-panel="performa">
-            <ul class="space-y-2.5 text-sm text-white/70">
-              <li>Sistem Three-Motor True Electric AWD &middot; 9 mode berkendara</li>
-              <li>Tenaga gabungan 445&ndash;455 PS &middot; torsi 505 Nm</li>
-              <li>Akselerasi 0&ndash;100 km/jam sekitar 5,9 detik (klaim pabrikan)</li>
-              <li>Mesin range extender 1.5T Turbo &middot; efisiensi termal 45,79%</li>
-              <li>Diuji ekstrem di rute N39 gurun China, suhu &minus;20&deg;C hingga &gt;45&deg;C</li>
-            </ul>
+          <div class="v27-tab-panel" data-panel="spesifikasi">
+            <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 text-sm">
+              <div class="rounded-xl bg-white/5 p-4"><span class="text-white/40">Power Assembly Linkage</span><br><strong class="text-white">RWD / iWD</strong></div>
+              <div class="rounded-xl bg-white/5 p-4"><span class="text-white/40">Engine Type</span><br><strong class="text-white">1.5L Turbo</strong></div>
+              <div class="rounded-xl bg-white/5 p-4"><span class="text-white/40">Fuel Type</span><br><strong class="text-white">92 RON Gasoline</strong></div>
+              <div class="rounded-xl bg-white/5 p-4"><span class="text-white/40">Battery Capacity</span><br><strong class="text-white">34,31 kWh</strong></div>
+              <div class="rounded-xl bg-white/5 p-4"><span class="text-white/40">Max. Power</span><br><strong class="text-white">185 (252) / 335 (455) kW (PS)</strong></div>
+              <div class="rounded-xl bg-white/5 p-4"><span class="text-white/40">Max. Torque</span><br><strong class="text-white">300 / 505 Nm</strong></div>
+            </div>
           </div>
           <div class="v27-tab-panel hidden" data-panel="dimensi">
-            <ul class="space-y-2.5 text-sm text-white/70">
-              <li>Panjang 5.045 mm &middot; Lebar 1.976 mm &middot; Tinggi 1.894 mm &middot; Wheelbase 2.900 mm</li>
-              <li>Baterai LFP CATL 34,3 kWh &middot; DC fast charging 20&ndash;80% sekitar 30 menit</li>
-              <li>Tangki BBM 60 liter &middot; jarak tempuh gabungan &plusmn;1.200 km (CLTC)</li>
-              <li>Jarak tempuh listrik murni 200 km (CLTC)</li>
-              <li>Velg dual-tone 21 inci &middot; ban cadangan penuh di belakang</li>
-            </ul>
+            <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 text-sm">
+              <div class="rounded-xl bg-white/5 p-4"><span class="text-white/40">Dimension (L x W x H)</span><br><strong class="text-white">5.045 x 1.976 x 1.894 mm</strong></div>
+              <div class="rounded-xl bg-white/5 p-4"><span class="text-white/40">Wheelbase</span><br><strong class="text-white">2.900 mm</strong></div>
+              <div class="rounded-xl bg-white/5 p-4"><span class="text-white/40">Ground Clearance</span><br><strong class="text-white">224 mm</strong></div>
+              <div class="rounded-xl bg-white/5 p-4"><span class="text-white/40">Approach Angle</span><br><strong class="text-white">24&deg;</strong></div>
+              <div class="rounded-xl bg-white/5 p-4"><span class="text-white/40">Departure Angle</span><br><strong class="text-white">23&deg;</strong></div>
+              <div class="rounded-xl bg-white/5 p-4"><span class="text-white/40">Wheel &amp; Tire</span><br><strong class="text-white">255/55 R19 &middot; 265/45 R21</strong></div>
+              <div class="rounded-xl bg-white/5 p-4"><span class="text-white/40">Spare Tire</span><br><strong class="text-white">Full Size</strong></div>
+              <div class="rounded-xl bg-white/5 p-4"><span class="text-white/40">Seating Capacity</span><br><strong class="text-white">5 Seaters</strong></div>
+            </div>
           </div>
           <div class="v27-tab-panel hidden" data-panel="fitur">
-            <ul class="space-y-2.5 text-sm text-white/70">
-              <li>Layar sentuh 15,4" chipset Snapdragon 8155 &middot; wireless Apple CarPlay &amp; Android Auto &middot; OTA</li>
-              <li>Dual Panoramic Sunroof &middot; Double-Bed Mode &middot; Starry Sky Island ambient light</li>
-              <li>Wireless charger 50W &middot; Vehicle-to-Load (V2L) 6 kW &middot; AC otomatis dual-zone</li>
-              <li>ADAS &middot; Driver Monitoring System &middot; Automatic Parking Assist &middot; kamera 540&deg; HD</li>
-            </ul>
+            <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 text-sm">
+              <div class="rounded-xl bg-white/5 p-4"><span class="text-white/40">Head Unit</span><br><strong class="text-white">15.4-Inch 3K HD Large Central Control</strong></div>
+              <div class="rounded-xl bg-white/5 p-4"><span class="text-white/40">Audio System</span><br><strong class="text-white">Pioneer with 15 Speakers</strong></div>
+              <div class="rounded-xl bg-white/5 p-4"><span class="text-white/40">Sky Screen</span><br><strong class="text-white">Dual Panoramic Sky Screen</strong></div>
+              <div class="rounded-xl bg-white/5 p-4"><span class="text-white/40">UV Protection</span><br><strong class="text-white">99.9% UV Protection</strong></div>
+              <div class="rounded-xl bg-white/5 p-4"><span class="text-white/40">Around View</span><br><strong class="text-white">540&deg; High-Definition</strong></div>
+              <div class="rounded-xl bg-white/5 p-4"><span class="text-white/40">Airbags</span><br><strong class="text-white">6 SRS Airbags</strong></div>
+              <div class="rounded-xl bg-white/5 p-4"><span class="text-white/40">Plug-in Charging</span><br><strong class="text-white">CCS2</strong></div>
+              <div class="rounded-xl bg-white/5 p-4"><span class="text-white/40">Interior Color</span><br><strong class="text-white">Black Brown</strong></div>
+            </div>
           </div>
         </div>
       </div>
@@ -1092,7 +1130,7 @@
     // karena elemen-elemen simulator (#simDp, #simOtr, dst.) baru ada di DOM setelah
     // section #pricelist dirender. Kalau dijalankan lebih awal, document.getElementById
     // akan mengembalikan null dan seluruh simulator gagal berjalan.
-    const PRICES = { X: 389.9, Y: 439.9, Z: 499.9 }; // Rp juta, harga OTR
+    const PRICES = { X: 399.9, Y: 449.9, Z: 529.9 }; // Rp juta, harga OTR
     const TYPE_LABELS = { X: 'Tipe X RWD', Y: 'Tipe Y RWD', Z: 'Tipe Z iWD' };
     // Bunga flat per tahun cenderung naik seiring tenor lebih panjang (lazim di leasing kendaraan RI)
     const RATE_BY_TENOR = { 12: 0.045, 24: 0.055, 36: 0.065, 48: 0.075 };
@@ -1152,5 +1190,39 @@
 
     updateSimulation();
   </script>
+
+<script>
+(function () {
+  const btn = document.getElementById('mobileMenuBtn');
+  const menu = document.getElementById('mobileMenu');
+  const closeBtn = document.getElementById('mobileMenuClose');
+  const backdrop = document.getElementById('mobileMenuBackdrop');
+  const openIcon = document.getElementById('mobileMenuIconOpen');
+  const closeIcon = document.getElementById('mobileMenuIconClose');
+
+  if (!btn || !menu) return;
+
+  function setMenu(open) {
+    menu.classList.toggle('hidden', !open);
+    btn.setAttribute('aria-expanded', String(open));
+    if (openIcon) openIcon.classList.toggle('hidden', open);
+    if (closeIcon) closeIcon.classList.toggle('hidden', !open);
+    document.body.classList.toggle('overflow-hidden', open);
+  }
+
+  btn.addEventListener('click', () => setMenu(menu.classList.contains('hidden')));
+  if (closeBtn) closeBtn.addEventListener('click', () => setMenu(false));
+  if (backdrop) backdrop.addEventListener('click', () => setMenu(false));
+
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => setMenu(false));
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) setMenu(false);
+  });
+})();
+</script>
+
 </body>
 </html>
