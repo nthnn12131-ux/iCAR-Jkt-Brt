@@ -552,6 +552,82 @@ nav,
 }
 </style>
 
+
+<style id="mobile-menu-visibility-fix">
+@media (max-width: 767px) {
+  /* Fix: isi menu HP harus selalu terlihat saat drawer terbuka */
+  #mobileMenu.is-open #mobileMenuPanel,
+  #mobileMenu.is-open #mobileMenuPanel .smooth-nav-item {
+    visibility: visible !important;
+  }
+
+  #mobileMenu.is-open #mobileMenuPanel .smooth-nav-item {
+    opacity: 1 !important;
+    transform: translate3d(0,0,0) !important;
+    animation: none !important;
+  }
+
+  #mobileMenuPanel {
+    background: #fff !important;
+    color: #15150F !important;
+  }
+
+  #mobileMenuPanel .smooth-nav-link {
+    color: #15150F !important;
+    opacity: 1 !important;
+  }
+
+  #mobileMenuPanel .smooth-nav-link span {
+    color: inherit;
+  }
+
+  #mobileMenuPanel .smooth-nav-link:hover {
+    background-color: #F5F1E7 !important;
+  }
+
+  /* Tetap smooth, tapi tanpa efek yang bisa membuat isi terlihat kosong */
+  #mobileMenu {
+    transition: opacity .22s ease !important;
+  }
+
+  #mobileMenuPanel {
+    transition: transform .26s cubic-bezier(.22,.61,.36,1),
+                opacity .18s ease !important;
+  }
+
+  #mobileMenu.is-open #mobileMenuPanel {
+    transform: translate3d(0,0,0) scale(1) !important;
+    opacity: 1 !important;
+  }
+}
+</style>
+
+
+<style id="mobile-ticker-motion-fix">
+/* Ticker berjalan kembali di HP. Hanya memperbaiki animasinya, desain tetap sama. */
+@media (max-width: 767px) {
+  .animate-\[marquee_28s_linear_infinite\] {
+    animation: marquee 28s linear infinite !important;
+    -webkit-animation: marquee 28s linear infinite !important;
+  }
+
+  /* Pastikan optimasi animasi umum tidak mematikan ticker */
+  .overflow-hidden.border-y.bg-olive-dark > div {
+    animation-name: marquee;
+    animation-duration: 28s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-\[marquee_28s_linear_infinite\] {
+    animation: none !important;
+    -webkit-animation: none !important;
+  }
+}
+</style>
+
 </head>
 <body class="font-sans antialiased text-ink">
 
