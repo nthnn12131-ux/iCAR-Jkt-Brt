@@ -155,6 +155,46 @@
     #heroPhotoImg, #heroPhotoWrap { animation: none; }
   }
 </style>
+
+<style>
+@media (max-width: 767px) {
+  .mobile-menu-backdrop { opacity: 0; transition: opacity .35s ease; }
+  .mobile-menu-panel { transform: translateX(105%); transition: transform .45s cubic-bezier(.22,1,.36,1); }
+  #mobileMenu:not(.hidden) .mobile-menu-backdrop { opacity: 1; }
+  #mobileMenu.is-open .mobile-menu-backdrop { opacity: 1; }
+  #mobileMenu.is-open .mobile-menu-panel { transform: translateX(0); }
+  #mobileMenu:not(.hidden) .mobile-menu-panel { transform: translateX(0); }
+  .mobile-nav-item {
+    display:flex; align-items:center; justify-content:space-between; gap:1rem;
+    padding: 16px 14px; margin: 3px 0; border-radius: 14px;
+    color: rgba(255,255,255,.86); font-size: 15px; font-weight: 500;
+    transition: transform .25s ease, background .25s ease, color .25s ease;
+  }
+  .mobile-nav-item:active { transform: scale(.97); background: rgba(255,255,255,.08); }
+  .mobile-nav-item span:last-child { font-size:10px; letter-spacing:.18em; color:rgba(255,255,255,.3); }
+  .mobile-model-item {
+    display:flex; align-items:center; justify-content:space-between; margin: 4px 0 4px 10px;
+    padding: 13px 14px; border-left: 1px solid rgba(255,255,255,.14);
+    color:rgba(255,255,255,.68); transition:all .25s ease;
+  }
+  .mobile-model-item:active { padding-left:20px; color:white; }
+  .mobile-model-item small { font-size:10px; letter-spacing:.08em; text-transform:uppercase; }
+  .mobile-prebook {
+    display:flex; align-items:center; justify-content:space-between; gap:1rem;
+    padding: 17px 18px; border-radius:16px; background:#E3A23C; color:#15150F;
+    font-weight:700; box-shadow:0 12px 30px rgba(227,162,60,.18);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .mobile-prebook:active { transform:scale(.97); box-shadow:0 6px 18px rgba(227,162,60,.12); }
+  .mobile-prebook span { display:flex; flex-direction:column; gap:3px; }
+  .mobile-prebook small { font-size:9px; letter-spacing:.2em; opacity:.65; }
+  body.mobile-menu-open { overflow:hidden; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mobile-menu-panel, .mobile-menu-backdrop, .mobile-nav-item, .mobile-model-item, .mobile-prebook { transition:none !important; }
+}
+</style>
+
 </head>
 <body class="font-sans antialiased text-ink">
 
@@ -213,26 +253,46 @@
 </nav>
 
 <!-- Mobile Navigation: hanya tampil di HP, desktop tidak berubah -->
-<div id="mobileMenu" class="hidden md:hidden fixed inset-x-0 top-0 z-[70]">
-  <div id="mobileMenuBackdrop" class="fixed inset-0 bg-black/30 backdrop-blur-sm"></div>
-  <div class="relative mx-3 mt-3 rounded-2xl bg-white shadow-2xl border border-black/10 overflow-hidden">
-    <div class="flex items-center justify-between px-5 py-4 border-b border-black/10">
-      <span class="font-semibold tracking-wide text-[#15150F]">Menu</span>
-      <button id="mobileMenuClose" type="button" aria-label="Tutup menu"
-        class="w-9 h-9 rounded-xl bg-[#F5F1E7] flex items-center justify-center text-[#15150F]">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M6 18L18 6"/>
-        </svg>
+<div id="mobileMenu" class="mobile-menu hidden md:hidden fixed inset-0 z-[70]" aria-hidden="true">
+  <div id="mobileMenuBackdrop" class="mobile-menu-backdrop absolute inset-0 bg-black/55 backdrop-blur-sm"></div>
+  <aside id="mobileMenuPanel" class="mobile-menu-panel absolute right-0 top-0 h-full w-[88%] max-w-sm bg-ink text-white shadow-2xl overflow-y-auto">
+    <div class="flex items-center justify-between px-6 py-5 border-b border-white/10">
+      <div>
+        <p class="text-[10px] uppercase tracking-[0.28em] text-amber">iCAR Jakarta</p>
+        <p class="mt-1 font-display text-2xl">Menu</p>
+      </div>
+      <button id="mobileMenuClose" type="button" aria-label="Tutup menu" class="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 transition hover:bg-white/10 active:scale-90">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
       </button>
     </div>
-    <div class="p-3">
-      <a href="#home" class="mobile-nav-link block rounded-xl px-4 py-3 font-medium text-[#15150F] hover:bg-[#F5F1E7]">Home</a>
-      <a href="#v27" class="mobile-nav-link block rounded-xl px-4 py-3 font-medium text-[#15150F] hover:bg-[#F5F1E7]">iCAR V27</a>
-      <a href="#colors" class="mobile-nav-link block rounded-xl px-4 py-3 font-medium text-[#15150F] hover:bg-[#F5F1E7]">Warna</a>
-      <a href="#specs" class="mobile-nav-link block rounded-xl px-4 py-3 font-medium text-[#15150F] hover:bg-[#F5F1E7]">Spesifikasi</a>
-      <a href="#contact" class="mobile-nav-link block mt-2 rounded-xl px-4 py-3 text-center font-semibold bg-[#15150F] text-white">PRE-BOOK NOW</a>
+
+    <nav class="px-4 py-5">
+      <a href="#home" class="mobile-nav-link mobile-nav-item"><span>Beranda</span><span>01</span></a>
+      <a href="#about" class="mobile-nav-link mobile-nav-item"><span>Tentang Kami</span><span>02</span></a>
+      <a href="#fleet" class="mobile-nav-link mobile-nav-item"><span>Armada</span><span>03</span></a>
+      <a href="#pricelist" class="mobile-nav-link mobile-nav-item"><span>Harga</span><span>04</span></a>
+
+      <div class="my-3 border-t border-white/10"></div>
+      <button id="mobileModelToggle" type="button" aria-expanded="false" class="mobile-nav-item w-full text-left">
+        <span>Model</span>
+        <svg id="mobileModelChevron" class="h-4 w-4 transition-transform duration-300" viewBox="0 0 12 12" fill="none"><path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="mobileModelSubmenu" class="max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-out">
+        <a href="#fleet" class="mobile-nav-link mobile-model-item"><span>iCAR V23</span><small>Boxy EV</small></a>
+        <a href="#v27" class="mobile-nav-link mobile-model-item"><span>iCAR V27</span><small class="text-amber">PRE-BOOK</small></a>
+      </div>
+
+      <a href="#lokasi" class="mobile-nav-link mobile-nav-item"><span>Lokasi</span><span>05</span></a>
+      <a href="#contact" class="mobile-nav-link mobile-prebook mt-5">
+        <span><small>iCAR V27</small>PRE-BOOK NOW</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </nav>
+
+    <div class="mt-auto px-6 pb-7 pt-4 text-xs text-white/35">
+      <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> Sales Consultant Resmi iCAR Jakarta Barat</div>
     </div>
-  </div>
+  </aside>
 </div>
 
   </header>
@@ -1199,23 +1259,51 @@
   const backdrop = document.getElementById('mobileMenuBackdrop');
   const openIcon = document.getElementById('mobileMenuIconOpen');
   const closeIcon = document.getElementById('mobileMenuIconClose');
+  const modelToggle = document.getElementById('mobileModelToggle');
+  const submenu = document.getElementById('mobileModelSubmenu');
+  const modelChevron = document.getElementById('mobileModelChevron');
 
   if (!btn || !menu) return;
 
   function setMenu(open) {
-    menu.classList.toggle('hidden', !open);
-    btn.setAttribute('aria-expanded', String(open));
-    if (openIcon) openIcon.classList.toggle('hidden', open);
-    if (closeIcon) closeIcon.classList.toggle('hidden', !open);
-    document.body.classList.toggle('overflow-hidden', open);
+    if (open) {
+      menu.classList.remove('hidden');
+      menu.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('mobile-menu-open');
+      btn.setAttribute('aria-expanded', 'true');
+      openIcon?.classList.add('hidden');
+      closeIcon?.classList.remove('hidden');
+      requestAnimationFrame(() => menu.classList.add('is-open'));
+    } else {
+      menu.classList.remove('is-open');
+      menu.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('mobile-menu-open');
+      btn.setAttribute('aria-expanded', 'false');
+      openIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+      setTimeout(() => menu.classList.add('hidden'), 450);
+    }
+  }
+
+  function toggleModels() {
+    const expanded = modelToggle.getAttribute('aria-expanded') === 'true';
+    modelToggle.setAttribute('aria-expanded', String(!expanded));
+    submenu.style.maxHeight = expanded ? '0px' : submenu.scrollHeight + 'px';
+    submenu.style.opacity = expanded ? '0' : '1';
+    modelChevron.style.transform = expanded ? 'rotate(0deg)' : 'rotate(180deg)';
   }
 
   btn.addEventListener('click', () => setMenu(menu.classList.contains('hidden')));
-  if (closeBtn) closeBtn.addEventListener('click', () => setMenu(false));
-  if (backdrop) backdrop.addEventListener('click', () => setMenu(false));
+  closeBtn?.addEventListener('click', () => setMenu(false));
+  backdrop?.addEventListener('click', () => setMenu(false));
+  modelToggle?.addEventListener('click', toggleModels);
 
   document.querySelectorAll('.mobile-nav-link').forEach(link => {
     link.addEventListener('click', () => setMenu(false));
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !menu.classList.contains('hidden')) setMenu(false);
   });
 
   window.addEventListener('resize', () => {
