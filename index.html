@@ -1834,7 +1834,7 @@ nav a[href="#home"].home-nav-active {
     form.addEventListener('submit', e => {
       e.preventDefault(); if(!form.reportValidity()) return;
       const d=Object.fromEntries(Array.from(new FormData(form),([k,v])=>[k,String(v).replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/g,'').slice(0,k==='pesan'?1000:160)]));
-      const text=service?`Halo Ricco, saya ingin mengajukan jadwal service iCAR.\n\nNama: ${d.nama.trim()}\nWhatsApp: ${d.telepon}\nModel: ${d.model}\nNomor polisi: ${d.plat.trim()||'-'}\nEmail: ${d.email.trim()||'-'}\nTahun: ${d.tahun||'-'}\nNomor rangka: ${d.rangka.trim()||'-'}\nTanggal pilihan: ${formatDate(d.tanggal)}\nLayanan: ${d.layanan}\nCatatan: ${d.pesan.trim()||'-'}\n\nMohon konfirmasi jadwal dan lokasi bengkel.`:`Halo Ricco, saya ingin konsultasi iCAR.\n\nNama: ${d.nama.trim()}\nWhatsApp: ${d.telepon}\nModel / varian: ${d.model}\nKebutuhan: ${d.kebutuhan}\nTanggal pilihan: ${formatDate(d.tanggal)}\nLokasi: ${d.lokasi}\nKota / area: ${d.area.trim()||'-'}\nPesan: ${d.pesan.trim()||'-'}\n\nMohon konfirmasi ketersediaan dan jadwalnya.`;
+      const text=`Halo Kak Ricco, saya ingin meminta informasi lebih lanjut tentang ${d.model}. Terima kasih.`;
       window.open('https://wa.me/'+DEALER_WA+'?text='+encodeURIComponent(text),'_blank','noopener,noreferrer');
     });
   }
@@ -1961,6 +1961,26 @@ document.querySelectorAll('[data-product-explorer]').forEach(root=>{
 (()=>{
  function reveal(hash){if(!hash||hash==='#')return;let id;try{id=decodeURIComponent(hash.slice(1))}catch{return}const target=document.getElementById(id);if(!target)return;let node=target.parentElement;while(node){if(node.tagName==='DETAILS')node.open=true;node=node.parentElement}}
  document.addEventListener('click',event=>{const a=event.target.closest('a[href^="#"]');if(a)reveal(a.getAttribute('href'))},true);window.addEventListener('hashchange',()=>reveal(location.hash));reveal(location.hash);
+})();
+</script><script id="compact-whatsapp-messages-js">
+(()=>{
+ const makeMessage=href=>{
+  let url;try{url=new URL(href,location.href)}catch{return href}
+  if(url.hostname!=='wa.me')return href;
+  const old=(url.searchParams.get('text')||'').toLocaleLowerCase('id');
+  const hasV23=old.includes('v23'),hasV27=old.includes('v27');
+  let model=hasV23&&hasV27?'iCAR V23 dan V27':hasV23?'iCAR V23':hasV27?'iCAR V27':'mobil iCAR';
+  if(hasV23){
+   if(old.includes('tipe x'))model='iCAR V23 Tipe X';
+   else if(old.includes('tipe y'))model='iCAR V23 Tipe Y';
+   else if(old.includes('tipe z'))model='iCAR V23 Tipe Z';
+  }
+  url.searchParams.set('text','Halo Kak Ricco, saya ingin meminta informasi lebih lanjut tentang '+model+'. Terima kasih.');
+  return url.toString();
+ };
+ const compact=anchor=>{if(anchor&&anchor.href.includes('wa.me/'))anchor.href=makeMessage(anchor.href)};
+ document.querySelectorAll('a[href*="wa.me/"]').forEach(compact);
+ document.addEventListener('click',event=>compact(event.target.closest('a[href*="wa.me/"]')),true);
 })();
 </script><script id="model-specific-visuals-js">
 (()=>{
