@@ -1,0 +1,15 @@
+{
+  "name": "iCAR Jakarta Barat",
+  "short_name": "iCAR Jakarta",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f1e7",
+  "theme_color": "#15150f",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
